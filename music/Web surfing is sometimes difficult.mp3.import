@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Web surfing is sometimes difficult.mp3-79507960e6b45c835363c990d9d3044b.mp3str"
+
+[deps]
+
+source_file="res://music/Web surfing is sometimes difficult.mp3"
+dest_files=[ "res://.import/Web surfing is sometimes difficult.mp3-79507960e6b45c835363c990d9d3044b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

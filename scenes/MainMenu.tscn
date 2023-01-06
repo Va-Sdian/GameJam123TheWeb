@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/Button.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sounds/Button.gd" type="Script" id=2]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="StartGame" type="Button" parent="."]
+margin_left = 424.0
+margin_top = 192.0
+margin_right = 587.0
+margin_bottom = 250.0
+text = "Start Game"
+script = ExtResource( 2 )
+reference_path = "res://scenes/GameWindow.tscn"
+
+[node name="Credits" type="Button" parent="."]
+margin_left = 424.0
+margin_top = 280.0
+margin_right = 587.0
+margin_bottom = 338.0
+text = "Credits"
+script = ExtResource( 2 )
+reference_path = "res://scenes/Credits.tscn"
+
+[node name="Exit" parent="." instance=ExtResource( 1 )]

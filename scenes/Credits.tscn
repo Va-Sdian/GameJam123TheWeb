@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/Button.tscn" type="PackedScene" id=1]
+
+[node name="Credits" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 304.0
+margin_top = 144.0
+margin_right = 671.0
+margin_bottom = 405.0
+text = "Made in Godot 3.5.1
+For Mini Jam 123: Web
+
+Code:
+Music and sound effects: Va Sdian
+Art: Crab"
+
+[node name="Exit" parent="." instance=ExtResource( 1 )]
+margin_left = 57.0
+margin_top = 37.0
+margin_right = 220.0
+margin_bottom = 95.0
+text = "Go back"
+reference_path = "res://scenes/MainMenu.tscn"
