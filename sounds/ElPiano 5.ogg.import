@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ElPiano 5.ogg-926823fe74dd1be98e93d526e09cb793.oggstr"
+
+[deps]
+
+source_file="res://sounds/ElPiano 5.ogg"
+dest_files=[ "res://.import/ElPiano 5.ogg-926823fe74dd1be98e93d526e09cb793.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

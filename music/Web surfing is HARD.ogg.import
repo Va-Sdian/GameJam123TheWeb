@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Web surfing is HARD.ogg-9f5086b7a8ea262172d664998775abce.oggstr"
+
+[deps]
+
+source_file="res://music/Web surfing is HARD.ogg"
+dest_files=[ "res://.import/Web surfing is HARD.ogg-9f5086b7a8ea262172d664998775abce.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

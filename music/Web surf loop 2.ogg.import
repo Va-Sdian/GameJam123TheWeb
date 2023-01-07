@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Web surf loop 2.ogg-def4bdff34d7d97ee19e385abf41037f.oggstr"
+
+[deps]
+
+source_file="res://music/Web surf loop 2.ogg"
+dest_files=[ "res://.import/Web surf loop 2.ogg-def4bdff34d7d97ee19e385abf41037f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
