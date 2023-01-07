@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://scenes/Menus/Button.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/Buttons/Button.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/buttons/ButtonBlue13.png" type="Texture" id=2]
 
 [node name="Credits" type="Node2D"]
 
@@ -16,10 +17,21 @@ Code:
 Music and sound effects: Va Sdian
 Art: Crab"
 
-[node name="Exit" parent="." instance=ExtResource( 1 )]
-margin_left = 57.0
-margin_top = 37.0
-margin_right = 220.0
-margin_bottom = 95.0
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 192.0
+margin_bottom = 128.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 2 )
+expand = true
+script = ExtResource( 1 )
+reference_path = "res://scenes/Menus/MainMenu.tscn"
+
+[node name="Label" type="Label" parent="TextureButton"]
+margin_right = 128.0
+margin_bottom = 64.0
 text = "Go back"
-reference_path = "res://scenes/MainMenu.tscn"
+align = 1
+valign = 1
+clip_text = true
