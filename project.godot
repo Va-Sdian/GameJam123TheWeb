@@ -50,7 +50,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-GlobalSignals="*res://scenes/Globals/GlobalSignals.gd"
+GlobalSignals="*res://scripts/Globals/GlobalSignals.gd"
 
 [gui]
 
