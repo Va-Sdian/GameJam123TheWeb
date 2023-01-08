@@ -3,9 +3,9 @@ class_name Player
 
 export (PackedScene) var Bullet
 
-const MAX_SPEED = 200
-const ACCELEARTION = 800
-const FRICTION = 1500
+const MAX_SPEED = 120
+const ACCELEARTION = 400
+const FRICTION = 2000
 
 var health: int = 100
 var velocity = Vector2.ZERO
@@ -23,8 +23,11 @@ func _physics_process(delta):
 	
 	if input_vector != Vector2.ZERO:
 		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELEARTION * delta)
+		$AnimationPlayer.play("crawl")
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
+		$AnimationPlayer.stop()
+		$Legs.frame = 0
 	
 	var mouse_position = get_global_mouse_position()
 	if mouse_position != player.global_position:
