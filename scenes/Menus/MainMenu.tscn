@@ -442,6 +442,7 @@
 30/z_index = 0
 
 [node name="MainMenu" type="Node2D"]
+pause_mode = 2
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 136, 160 )
@@ -499,7 +500,7 @@ texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 2 )
 expand = true
 script = ExtResource( 1 )
-reference_path = "res://scenes/Misc/MusicControl.tscn"
+reference_path = "res://scenes/Menus/MusicControl.tscn"
 
 [node name="Label" type="Label" parent="Option"]
 margin_right = 239.0
