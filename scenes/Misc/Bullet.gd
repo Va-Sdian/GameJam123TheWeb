@@ -23,5 +23,5 @@ func _on_Bullet_body_entered(body):
 	if body.has_method("handle_hit"):
 		body.handle_hit()
 		queue_free()
-	elif body.has_method("map_to_world"):
+	elif body.has_method("get_bounce"):
 		queue_free()

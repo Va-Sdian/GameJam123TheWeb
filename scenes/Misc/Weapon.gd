@@ -14,8 +14,6 @@ func shoot():
 		var direction = (gun_position.global_position - gun_end.global_position).normalized()
 		GlobalSignals.emit_signal("bullet_fired", bullet_instance, gun_end.global_position, direction)
 		shoot_cooldown.start()
-<<<<<<< Updated upstream
-=======
 		
 
 func capture():
@@ -24,4 +22,3 @@ func capture():
 		var direction = (gun_position.global_position - gun_end.global_position).normalized()
 		GlobalSignals.emit_signal("bullet_fired", bulletCapture_instance, gun_end.global_position, direction)
 		shoot_cooldown.start()
->>>>>>> Stashed changes

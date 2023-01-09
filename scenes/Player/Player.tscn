@@ -1,24 +1,35 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=6 format=2]
-=======
 [gd_scene load_steps=10 format=2]
->>>>>>> Stashed changes
 
-[ext_resource path="res://Sprites/AntiVirus.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/AV-Head.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Player/Player.gd" type="Script" id=2]
 [ext_resource path="res://scenes/Misc/Weapon.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Misc/Health.tscn" type="PackedScene" id=4]
-<<<<<<< Updated upstream
-=======
 [ext_resource path="res://Sprites/AV-Sheet.png" type="Texture" id=5]
 [ext_resource path="res://scenes/Misc/BulletCapture.tscn" type="PackedScene" id=6]
 [ext_resource path="res://sounds/Square 2.ogg" type="AudioStream" id=7]
->>>>>>> Stashed changes
 
 [sub_resource type="CircleShape2D" id=1]
 
+[sub_resource type="Animation" id=2]
+resource_name = "crawl"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Legs:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
 [node name="Player" type="KinematicBody2D"]
 rotation = -1.5708
+collision_mask = 5
 script = ExtResource( 2 )
 
 [node name="AntiVirus" type="Sprite" parent="."]
@@ -31,6 +42,7 @@ shape = SubResource( 1 )
 
 [node name="Health" parent="." instance=ExtResource( 4 )]
 rotation = -1.5708
+health = 100
 
 [node name="Camera2D" type="Camera2D" parent="."]
 rotation = -1.5708
@@ -43,8 +55,6 @@ smoothing_enabled = true
 [node name="Weapon" parent="." instance=ExtResource( 3 )]
 position = Vector2( 17, 9.53674e-07 )
 rotation = -1.5708
-<<<<<<< Updated upstream
-=======
 BulletCapture = ExtResource( 6 )
 
 [node name="Legs" type="Sprite" parent="."]
@@ -61,4 +71,3 @@ anims/crawl = SubResource( 2 )
 stream = ExtResource( 7 )
 volume_db = -4.37
 bus = "SFX"
->>>>>>> Stashed changes
