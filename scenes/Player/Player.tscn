@@ -27,6 +27,7 @@ tracks/0/keys = {
 
 [node name="Player" type="KinematicBody2D"]
 rotation = -1.5708
+collision_mask = 5
 script = ExtResource( 2 )
 
 [node name="AntiVirus" type="Sprite" parent="."]
@@ -39,6 +40,7 @@ shape = SubResource( 1 )
 
 [node name="Health" parent="." instance=ExtResource( 4 )]
 rotation = -1.5708
+health = 100
 
 [node name="Camera2D" type="Camera2D" parent="."]
 rotation = -1.5708
