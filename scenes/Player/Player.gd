@@ -38,6 +38,8 @@ func _physics_process(delta):
 func _unhandled_input(event):
 	if event.is_action_pressed("shoot"):
 		weapon.shoot()
+	if event.is_action_pressed("capture"):
+		weapon.shoot()
 
 func handle_hit():
 	health_set.health -= 1
