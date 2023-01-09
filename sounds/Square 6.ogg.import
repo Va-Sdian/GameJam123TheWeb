@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Square 6.ogg-4e36528095a35d13cd12b0ed092b1f9b.oggstr"
+
+[deps]
+
+source_file="res://sounds/Square 6.ogg"
+dest_files=[ "res://.import/Square 6.ogg-4e36528095a35d13cd12b0ed092b1f9b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
