@@ -35,6 +35,12 @@ func _physics_process(delta):
 func _unhandled_input(event):
 	if event.is_action_pressed("shoot"):
 		weapon.shoot()
+<<<<<<< Updated upstream
+=======
+		$ShootSound.play()
+	if event.is_action_pressed("capture"): #Атака захватом, пока не осуществлена
+		weapon.capture()
+>>>>>>> Stashed changes
 
 func handle_hit():
 	health_set.health -= 1

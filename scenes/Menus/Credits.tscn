@@ -1,7 +1,13 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/Buttons/Button.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/buttons/ButtonBlue13.png" type="Texture" id=2]
+=======
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/Button/GoBackButtonButton.tscn" type="PackedScene" id=1]
+>>>>>>> Stashed changes
 
 [node name="Credits" type="Node2D"]
 
@@ -10,6 +16,7 @@ margin_left = 304.0
 margin_top = 144.0
 margin_right = 671.0
 margin_bottom = 405.0
+<<<<<<< Updated upstream
 text = "Made in Godot 3.5.1
 For Mini Jam 123: Web
 
@@ -35,3 +42,13 @@ text = "Go back"
 align = 1
 valign = 1
 clip_text = true
+=======
+text = "Made in Godot 3.5.1
+For Mini Jam 123: Web
+
+Code:
+Music and sound effects: Va Sdian
+Art: Crab"
+
+[node name="TextureButton" parent="." instance=ExtResource( 1 )]
+>>>>>>> Stashed changes

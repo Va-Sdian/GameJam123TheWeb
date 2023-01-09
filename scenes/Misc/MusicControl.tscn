@@ -1,0 +1,109 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://MusicSettings.gd" type="Script" id=1]
+[ext_resource path="res://sounds/Square 4.ogg" type="AudioStream" id=2]
+[ext_resource path="res://music/Web surf loop 3.ogg" type="AudioStream" id=3]
+[ext_resource path="res://scenes/Button/GoBackButtonButton.tscn" type="PackedScene" id=4]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="GridContainer" type="GridContainer" parent="."]
+margin_left = 256.0
+margin_top = 192.0
+margin_right = 704.0
+margin_bottom = 256.0
+columns = 2
+
+[node name="MusicSettings" type="VBoxContainer" parent="GridContainer"]
+margin_right = 222.0
+margin_bottom = 58.0
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+label = "Music"
+bus_name = "Music"
+audio_stream_player_path = NodePath("../../MusicPlayer")
+
+[node name="Label" type="Label" parent="GridContainer/MusicSettings"]
+margin_right = 222.0
+margin_bottom = 14.0
+text = "Music Volume"
+
+[node name="HSlider" type="HSlider" parent="GridContainer/MusicSettings"]
+margin_top = 18.0
+margin_right = 222.0
+margin_bottom = 34.0
+min_value = -24.0
+max_value = 0.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GridContainer/MusicSettings"]
+margin_top = 38.0
+margin_right = 222.0
+margin_bottom = 58.0
+
+[node name="Play" type="Button" parent="GridContainer/MusicSettings/HBoxContainer"]
+margin_right = 38.0
+margin_bottom = 20.0
+text = "Play"
+
+[node name="Stop" type="Button" parent="GridContainer/MusicSettings/HBoxContainer"]
+margin_left = 42.0
+margin_right = 82.0
+margin_bottom = 20.0
+text = "Stop"
+
+[node name="SFXSettings" type="VBoxContainer" parent="GridContainer"]
+margin_left = 226.0
+margin_right = 448.0
+margin_bottom = 58.0
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+label = "SFX"
+bus_name = "SFX"
+audio_stream_player_path = NodePath("../../SFXPlayer")
+
+[node name="Label" type="Label" parent="GridContainer/SFXSettings"]
+margin_right = 222.0
+margin_bottom = 14.0
+text = "SFX Volume"
+
+[node name="HSlider" type="HSlider" parent="GridContainer/SFXSettings"]
+margin_top = 18.0
+margin_right = 222.0
+margin_bottom = 34.0
+min_value = -24.0
+max_value = 0.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GridContainer/SFXSettings"]
+margin_top = 38.0
+margin_right = 222.0
+margin_bottom = 58.0
+
+[node name="Play" type="Button" parent="GridContainer/SFXSettings/HBoxContainer"]
+margin_right = 38.0
+margin_bottom = 20.0
+text = "Play"
+
+[node name="Stop" type="Button" parent="GridContainer/SFXSettings/HBoxContainer"]
+margin_left = 42.0
+margin_right = 82.0
+margin_bottom = 20.0
+text = "Stop"
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "Music"
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+bus = "SFX"
+
+[node name="TextureButton" parent="." instance=ExtResource( 4 )]
+
+[connection signal="value_changed" from="GridContainer/MusicSettings/HSlider" to="GridContainer/MusicSettings" method="_on_HSlider_value_changed"]
+[connection signal="pressed" from="GridContainer/MusicSettings/HBoxContainer/Play" to="GridContainer/MusicSettings" method="_on_Play_pressed"]
+[connection signal="pressed" from="GridContainer/MusicSettings/HBoxContainer/Stop" to="GridContainer/MusicSettings" method="_on_Stop_pressed"]
+[connection signal="value_changed" from="GridContainer/SFXSettings/HSlider" to="GridContainer/SFXSettings" method="_on_HSlider_value_changed"]
+[connection signal="pressed" from="GridContainer/SFXSettings/HBoxContainer/Play" to="GridContainer/SFXSettings" method="_on_Play_pressed"]
+[connection signal="pressed" from="GridContainer/SFXSettings/HBoxContainer/Stop" to="GridContainer/SFXSettings" method="_on_Stop_pressed"]

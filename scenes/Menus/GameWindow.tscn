@@ -4,6 +4,7 @@
 [ext_resource path="res://music/Web surfing is so calm.ogg" type="AudioStream" id=2]
 [ext_resource path="res://scenes/Menus/GameWindow.gd" type="Script" id=3]
 [ext_resource path="res://scenes/Misc/BulletManager.tscn" type="PackedScene" id=4]
+<<<<<<< Updated upstream
 [ext_resource path="res://Sprites/WebTileSet.png" type="Texture" id=5]
 
 [sub_resource type="Curve2D" id=1]
@@ -82,6 +83,12 @@ _data = {
 2/shapes = [  ]
 2/z_index = 0
 
+=======
+[ext_resource path="res://scenes/TileMap.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Bases/VirusSpawner.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Bases/QuarantineBase.tscn" type="PackedScene" id=7]
+
+>>>>>>> Stashed changes
 [node name="GameWindow" type="Node"]
 script = ExtResource( 3 )
 
@@ -97,10 +104,21 @@ position = Vector2( -16, -16 )
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 autoplay = true
+bus = "Music"
 
 [node name="BulletManager" parent="." instance=ExtResource( 4 )]
 
+<<<<<<< Updated upstream
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
+=======
+[node name="TileMap" parent="." instance=ExtResource( 5 )]
+
+[node name="StaticBody2D" parent="." instance=ExtResource( 7 )]
+position = Vector2( 386, 380 )
+
+[node name="StaticBody2D2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 696, 194 )
+>>>>>>> Stashed changes
