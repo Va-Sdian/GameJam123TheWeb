@@ -38,8 +38,9 @@ func _physics_process(delta):
 func _unhandled_input(event):
 	if event.is_action_pressed("shoot"):
 		weapon.shoot()
-	if event.is_action_pressed("capture"):
-		weapon.shoot()
+		$ShootSound.play()
+	if event.is_action_pressed("capture"): #Атака захватом, пока не осуществлена
+		weapon.capture()
 
 func handle_hit():
 	health_set.health -= 1

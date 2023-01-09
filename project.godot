@@ -14,10 +14,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/Misc/Bullet.gd"
 }, {
-"base": "RigidBody2D",
-"class": "Enemy",
+"base": "Area2D",
+"class": "BulletCapture",
 "language": "GDScript",
-"path": "res://scenes/Viruses/Virus1.gd"
+"path": "res://scenes/Misc/BulletCapture.gd"
 }, {
 "base": "Node2D",
 "class": "Health",
@@ -36,7 +36,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Bullet": "",
-"Enemy": "",
+"BulletCapture": "",
 "Health": "",
 "Player": "",
 "Weapon": ""

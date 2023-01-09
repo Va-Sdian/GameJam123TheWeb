@@ -1,13 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://scripts/Buttons/Button.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/buttons/ButtonBlue13.png" type="Texture" id=2]
-[ext_resource path="res://music/Web surf loop 1.ogg" type="AudioStream" id=3]
-[ext_resource path="res://Sprites/WebTileSet.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/WebTileSet.png" type="Texture" id=1]
 
 [sub_resource type="TileSet" id=2]
 0/name = "WebTileSet.png 0"
-0/texture = ExtResource( 4 )
+0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 32, 32 )
@@ -21,7 +18,7 @@
 0/shapes = [  ]
 0/z_index = 0
 1/name = "WebTileSet.png 1"
-1/texture = ExtResource( 4 )
+1/texture = ExtResource( 1 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 32, 0, 32, 32 )
@@ -35,7 +32,7 @@
 1/shapes = [  ]
 1/z_index = 0
 2/name = "WebTileSet.png 2"
-2/texture = ExtResource( 4 )
+2/texture = ExtResource( 1 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 64, 0, 32, 32 )
@@ -49,7 +46,7 @@
 2/shapes = [  ]
 2/z_index = 0
 3/name = "WebTileSet.png 3"
-3/texture = ExtResource( 4 )
+3/texture = ExtResource( 1 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 96, 0, 32, 32 )
@@ -63,7 +60,7 @@
 3/shapes = [  ]
 3/z_index = 0
 4/name = "WebTileSet.png 4"
-4/texture = ExtResource( 4 )
+4/texture = ExtResource( 1 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 128, 0, 32, 32 )
@@ -77,7 +74,7 @@
 4/shapes = [  ]
 4/z_index = 0
 5/name = "WebTileSet.png 5"
-5/texture = ExtResource( 4 )
+5/texture = ExtResource( 1 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 160, 0, 32, 32 )
@@ -91,7 +88,7 @@
 5/shapes = [  ]
 5/z_index = 0
 6/name = "WebTileSet.png 6"
-6/texture = ExtResource( 4 )
+6/texture = ExtResource( 1 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 0, 32, 32, 32 )
@@ -105,7 +102,7 @@
 6/shapes = [  ]
 6/z_index = 0
 7/name = "WebTileSet.png 7"
-7/texture = ExtResource( 4 )
+7/texture = ExtResource( 1 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 32, 32, 32, 32 )
@@ -119,7 +116,7 @@
 7/shapes = [  ]
 7/z_index = 0
 8/name = "WebTileSet.png 8"
-8/texture = ExtResource( 4 )
+8/texture = ExtResource( 1 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 64, 32, 32, 32 )
@@ -133,7 +130,7 @@
 8/shapes = [  ]
 8/z_index = 0
 9/name = "WebTileSet.png 9"
-9/texture = ExtResource( 4 )
+9/texture = ExtResource( 1 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 96, 32, 32, 32 )
@@ -147,7 +144,7 @@
 9/shapes = [  ]
 9/z_index = 0
 10/name = "WebTileSet.png 10"
-10/texture = ExtResource( 4 )
+10/texture = ExtResource( 1 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
 10/region = Rect2( 128, 32, 32, 32 )
@@ -161,7 +158,7 @@
 10/shapes = [  ]
 10/z_index = 0
 11/name = "WebTileSet.png 11"
-11/texture = ExtResource( 4 )
+11/texture = ExtResource( 1 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
 11/region = Rect2( 160, 32, 32, 32 )
@@ -175,7 +172,7 @@
 11/shapes = [  ]
 11/z_index = 0
 12/name = "WebTileSet.png 12"
-12/texture = ExtResource( 4 )
+12/texture = ExtResource( 1 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
 12/region = Rect2( 0, 64, 32, 32 )
@@ -189,7 +186,7 @@
 12/shapes = [  ]
 12/z_index = 0
 13/name = "WebTileSet.png 13"
-13/texture = ExtResource( 4 )
+13/texture = ExtResource( 1 )
 13/tex_offset = Vector2( 0, 0 )
 13/modulate = Color( 1, 1, 1, 1 )
 13/region = Rect2( 32, 64, 32, 32 )
@@ -203,7 +200,7 @@
 13/shapes = [  ]
 13/z_index = 0
 14/name = "WebTileSet.png 14"
-14/texture = ExtResource( 4 )
+14/texture = ExtResource( 1 )
 14/tex_offset = Vector2( 0, 0 )
 14/modulate = Color( 1, 1, 1, 1 )
 14/region = Rect2( 64, 64, 32, 32 )
@@ -217,7 +214,7 @@
 14/shapes = [  ]
 14/z_index = 0
 15/name = "WebTileSet.png 15"
-15/texture = ExtResource( 4 )
+15/texture = ExtResource( 1 )
 15/tex_offset = Vector2( 0, 0 )
 15/modulate = Color( 1, 1, 1, 1 )
 15/region = Rect2( 64, 64, 32, 32 )
@@ -231,7 +228,7 @@
 15/shapes = [  ]
 15/z_index = 0
 16/name = "WebTileSet.png 16"
-16/texture = ExtResource( 4 )
+16/texture = ExtResource( 1 )
 16/tex_offset = Vector2( 0, 0 )
 16/modulate = Color( 1, 1, 1, 1 )
 16/region = Rect2( 96, 64, 32, 32 )
@@ -245,7 +242,7 @@
 16/shapes = [  ]
 16/z_index = 0
 17/name = "WebTileSet.png 17"
-17/texture = ExtResource( 4 )
+17/texture = ExtResource( 1 )
 17/tex_offset = Vector2( 0, 0 )
 17/modulate = Color( 1, 1, 1, 1 )
 17/region = Rect2( 128, 64, 32, 32 )
@@ -259,7 +256,7 @@
 17/shapes = [  ]
 17/z_index = 0
 18/name = "WebTileSet.png 18"
-18/texture = ExtResource( 4 )
+18/texture = ExtResource( 1 )
 18/tex_offset = Vector2( 0, 0 )
 18/modulate = Color( 1, 1, 1, 1 )
 18/region = Rect2( 160, 64, 32, 32 )
@@ -273,7 +270,7 @@
 18/shapes = [  ]
 18/z_index = 0
 19/name = "WebTileSet.png 19"
-19/texture = ExtResource( 4 )
+19/texture = ExtResource( 1 )
 19/tex_offset = Vector2( 0, 0 )
 19/modulate = Color( 1, 1, 1, 1 )
 19/region = Rect2( 0, 96, 32, 32 )
@@ -287,7 +284,7 @@
 19/shapes = [  ]
 19/z_index = 0
 20/name = "WebTileSet.png 20"
-20/texture = ExtResource( 4 )
+20/texture = ExtResource( 1 )
 20/tex_offset = Vector2( 0, 0 )
 20/modulate = Color( 1, 1, 1, 1 )
 20/region = Rect2( 32, 96, 32, 32 )
@@ -301,7 +298,7 @@
 20/shapes = [  ]
 20/z_index = 0
 21/name = "WebTileSet.png 21"
-21/texture = ExtResource( 4 )
+21/texture = ExtResource( 1 )
 21/tex_offset = Vector2( 0, 0 )
 21/modulate = Color( 1, 1, 1, 1 )
 21/region = Rect2( 64, 96, 32, 32 )
@@ -315,7 +312,7 @@
 21/shapes = [  ]
 21/z_index = 0
 22/name = "WebTileSet.png 22"
-22/texture = ExtResource( 4 )
+22/texture = ExtResource( 1 )
 22/tex_offset = Vector2( 0, 0 )
 22/modulate = Color( 1, 1, 1, 1 )
 22/region = Rect2( 96, 96, 32, 32 )
@@ -329,7 +326,7 @@
 22/shapes = [  ]
 22/z_index = 0
 23/name = "WebTileSet.png 23"
-23/texture = ExtResource( 4 )
+23/texture = ExtResource( 1 )
 23/tex_offset = Vector2( 0, 0 )
 23/modulate = Color( 1, 1, 1, 1 )
 23/region = Rect2( 128, 96, 32, 32 )
@@ -343,7 +340,7 @@
 23/shapes = [  ]
 23/z_index = 0
 24/name = "WebTileSet.png 24"
-24/texture = ExtResource( 4 )
+24/texture = ExtResource( 1 )
 24/tex_offset = Vector2( 0, 0 )
 24/modulate = Color( 1, 1, 1, 1 )
 24/region = Rect2( 160, 96, 32, 32 )
@@ -357,7 +354,7 @@
 24/shapes = [  ]
 24/z_index = 0
 25/name = "WebTileSet.png 25"
-25/texture = ExtResource( 4 )
+25/texture = ExtResource( 1 )
 25/tex_offset = Vector2( 0, 0 )
 25/modulate = Color( 1, 1, 1, 1 )
 25/region = Rect2( 0, 128, 32, 32 )
@@ -371,7 +368,7 @@
 25/shapes = [  ]
 25/z_index = 0
 26/name = "WebTileSet.png 26"
-26/texture = ExtResource( 4 )
+26/texture = ExtResource( 1 )
 26/tex_offset = Vector2( 0, 0 )
 26/modulate = Color( 1, 1, 1, 1 )
 26/region = Rect2( 32, 128, 32, 32 )
@@ -385,7 +382,7 @@
 26/shapes = [  ]
 26/z_index = 0
 27/name = "WebTileSet.png 27"
-27/texture = ExtResource( 4 )
+27/texture = ExtResource( 1 )
 27/tex_offset = Vector2( 0, 0 )
 27/modulate = Color( 1, 1, 1, 1 )
 27/region = Rect2( 64, 128, 32, 32 )
@@ -399,7 +396,7 @@
 27/shapes = [  ]
 27/z_index = 0
 28/name = "WebTileSet.png 28"
-28/texture = ExtResource( 4 )
+28/texture = ExtResource( 1 )
 28/tex_offset = Vector2( 0, 0 )
 28/modulate = Color( 1, 1, 1, 1 )
 28/region = Rect2( 96, 128, 32, 32 )
@@ -413,7 +410,7 @@
 28/shapes = [  ]
 28/z_index = 0
 29/name = "WebTileSet.png 29"
-29/texture = ExtResource( 4 )
+29/texture = ExtResource( 1 )
 29/tex_offset = Vector2( 0, 0 )
 29/modulate = Color( 1, 1, 1, 1 )
 29/region = Rect2( 128, 128, 32, 32 )
@@ -427,7 +424,7 @@
 29/shapes = [  ]
 29/z_index = 0
 30/name = "WebTileSet.png 30"
-30/texture = ExtResource( 4 )
+30/texture = ExtResource( 1 )
 30/tex_offset = Vector2( 0, 0 )
 30/modulate = Color( 1, 1, 1, 1 )
 30/region = Rect2( 160, 128, 32, 32 )
@@ -441,93 +438,10 @@
 30/shapes = [  ]
 30/z_index = 0
 
-[node name="MainMenu" type="Node2D"]
-
-[node name="TileMap" type="TileMap" parent="."]
-position = Vector2( 136, 160 )
+[node name="TileMap" type="TileMap"]
 z_index = -2
 tile_set = SubResource( 2 )
 cell_size = Vector2( 32, 32 )
 cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 format = 1
-tile_data = PoolIntArray( -196587, 9, 0, -196586, 0, 0, -196585, 0, 0, -196584, 0, 0, -131052, 9, 0, -131051, 0, 0, -131050, 0, 0, -131049, 0, 0, -131048, 0, 0, -131047, 9, 0, -65533, 15, 0, -65532, 0, 0, -65516, 0, 0, -65515, 0, 0, -65514, 0, 0, -65513, 0, 0, -65512, 0, 0, -65511, 9, 0, 3, 0, 0, 4, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 9, 0, 65539, 0, 0, 65540, 0, 0, 65541, 16, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 18, 0, 196611, 0, 0, 196612, 0, 0, 196613, 1, 0, 196614, 1, 0, 262147, 15, 0, 262148, 1, 0, 262149, 1, 0, 262150, 13, 0, 262153, 14, 0, 262154, 20, 0, 262155, 19, 0, 262156, 20, 0, 262157, 19, 0, 262158, 20, 0, 262159, 16, 0, 262163, 9, 0, 262164, 10, 0, 262165, 19, 0, 262166, 20, 0, 262167, 18, 0, 327684, 13, 0, 327685, 13, 0, 327688, 17, 0, 327689, 11, 0, 327690, 1, 0, 327691, 0, 0, 327692, 1, 0, 327693, 0, 0, 327694, 1, 0, 327695, 8, 0, 327698, 26, 0, 327699, 0, 0, 327700, 1, 0, 327701, 30, 0, 327702, 1, 0, 327703, 25, 0, 393224, 28, 0, 393225, 6, 0, 393226, 7, 0, 393227, 6, 0, 393228, 7, 0, 393229, 6, 0, 393230, 7, 0, 393231, 30, 0, 393232, 7, 0, 393234, 26, 0, 393235, 6, 0, 393236, 7, 0, 393237, 6, 0, 393238, 7, 0, 393239, 27, 0, 458760, 26, 0, 458761, 0, 0, 458762, 30, 0, 458763, 0, 0, 458764, 1, 0, 458765, 0, 0, 458766, 1, 0, 458767, 0, 0, 458768, 1, 0, 458770, 26, 0, 458771, 0, 0, 458772, 1, 0, 458773, 0, 0, 458774, 1, 0, 458775, 25, 0, 524296, 28, 0, 524297, 6, 0, 524298, 7, 0, 524299, 6, 0, 524300, 7, 0, 524301, 6, 0, 524302, 7, 0, 524303, 6, 0, 524304, 7, 0, 524306, 26, 0, 524307, 26, 0, 524308, 7, 0, 524309, 6, 0, 524310, 2, 0, 524311, 24, 0, 589832, 26, 0, 589833, 0, 0, 589834, 4, 0, 589835, 12, 0, 589836, 3, 0, 589837, 1, 0, 589838, 0, 0, 589839, 1, 0, 589842, 0, 0, 589843, 1, 0, 589844, 1, 0, 589845, 0, 0, 589846, 27, 0, 655368, 28, 0, 655369, 6, 0, 655370, 25, 0, 655372, 21, 0, 655373, 3, 0, 655377, 7, 0, 655378, 6, 0, 655379, 7, 0, 655380, 7, 0, 655381, 6, 0, 655382, 25, 0, 720904, 26, 0, 720905, 0, 0, 720906, 27, 0, 720912, 0, 0, 720913, 1, 0, 720914, 0, 0, 720915, 1, 0, 720916, 1, 0, 720917, 4, 0, 720918, 24, 0, 786440, 28, 0, 786441, 6, 0, 786442, 7, 0, 786446, 6, 0, 786447, 7, 0, 786448, 6, 0, 786449, 7, 0, 786450, 4, 0, 786451, 12, 0, 786452, 13, 0, 786453, 22, 0, 851981, 23, 0, 851982, 13, 0, 851983, 12, 0, 851984, 13, 0, 851985, 12, 0, 851986, 22, 0 )
-
-[node name="Start Game" type="TextureButton" parent="."]
-margin_left = 384.0
-margin_top = 64.0
-margin_right = 625.0
-margin_bottom = 125.0
-texture_normal = ExtResource( 2 )
-texture_pressed = ExtResource( 2 )
-expand = true
-script = ExtResource( 1 )
-reference_path = "res://scenes/Menus/GameWindow.tscn"
-
-[node name="Label" type="Label" parent="Start Game"]
-margin_right = 239.0
-margin_bottom = 60.0
-text = "Start Game"
-align = 1
-valign = 1
-clip_text = true
-
-[node name="Credits" type="TextureButton" parent="."]
-margin_left = 384.0
-margin_top = 320.0
-margin_right = 625.0
-margin_bottom = 381.0
-texture_normal = ExtResource( 2 )
-texture_pressed = ExtResource( 2 )
-expand = true
-script = ExtResource( 1 )
-reference_path = "res://scenes/Menus/Credits.tscn"
-
-[node name="Label" type="Label" parent="Credits"]
-margin_right = 239.0
-margin_bottom = 60.0
-text = "Credits"
-align = 1
-valign = 1
-clip_text = true
-
-[node name="Option" type="TextureButton" parent="."]
-margin_left = 384.0
-margin_top = 192.0
-margin_right = 625.0
-margin_bottom = 253.0
-texture_normal = ExtResource( 2 )
-texture_pressed = ExtResource( 2 )
-expand = true
-script = ExtResource( 1 )
-reference_path = "res://scenes/Misc/MusicControl.tscn"
-
-[node name="Label" type="Label" parent="Option"]
-margin_right = 239.0
-margin_bottom = 60.0
-text = "Option"
-align = 1
-valign = 1
-clip_text = true
-
-[node name="Exit" type="TextureButton" parent="."]
-margin_left = 384.0
-margin_top = 456.0
-margin_right = 625.0
-margin_bottom = 517.0
-texture_normal = ExtResource( 2 )
-texture_pressed = ExtResource( 2 )
-expand = true
-script = ExtResource( 1 )
-
-[node name="Label" type="Label" parent="Exit"]
-margin_right = 239.0
-margin_bottom = 60.0
-text = "Exit"
-align = 1
-valign = 1
-clip_text = true
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
-autoplay = true
-bus = "Music"
+tile_data = PoolIntArray( 262153, 14, 0, 262154, 20, 0, 262155, 19, 0, 262156, 20, 0, 262157, 19, 0, 262158, 20, 0, 262159, 16, 0, 262161, 15, 0, 262162, 20, 0, 262163, 19, 0, 262164, 20, 0, 262165, 19, 0, 262166, 20, 0, 262167, 18, 0, 327688, 17, 0, 327689, 11, 0, 327690, 1, 0, 327691, 0, 0, 327692, 1, 0, 327693, 0, 0, 327694, 1, 0, 327695, 8, 0, 327696, 19, 0, 327697, 9, 0, 327698, 1, 0, 327699, 0, 0, 327700, 1, 0, 327701, 30, 0, 327702, 1, 0, 327703, 25, 0, 393224, 28, 0, 393225, 6, 0, 393226, 7, 0, 393227, 6, 0, 393228, 7, 0, 393229, 6, 0, 393230, 7, 0, 393231, 30, 0, 393232, 7, 0, 393233, 6, 0, 393234, 7, 0, 393235, 6, 0, 393236, 7, 0, 393237, 6, 0, 393238, 7, 0, 393239, 27, 0, 458760, 26, 0, 458761, 0, 0, 458762, 30, 0, 458763, 0, 0, 458764, 1, 0, 458765, 0, 0, 458766, 1, 0, 458767, 0, 0, 458768, 1, 0, 458769, 0, 0, 458770, 1, 0, 458771, 0, 0, 458772, 1, 0, 458773, 0, 0, 458774, 1, 0, 458775, 25, 0, 524296, 28, 0, 524297, 6, 0, 524298, 7, 0, 524299, 6, 0, 524300, 7, 0, 524301, 6, 0, 524302, 7, 0, 524303, 6, 0, 524304, 7, 0, 524305, 6, 0, 524306, 7, 0, 524307, 29, 0, 524308, 7, 0, 524309, 6, 0, 524310, 2, 0, 524311, 24, 0, 589832, 26, 0, 589833, 0, 0, 589834, 4, 0, 589835, 12, 0, 589836, 3, 0, 589837, 1, 0, 589838, 0, 0, 589839, 1, 0, 589840, 0, 0, 589841, 1, 0, 589842, 0, 0, 589843, 1, 0, 589844, 1, 0, 589845, 0, 0, 589846, 27, 0, 655368, 28, 0, 655369, 6, 0, 655370, 25, 0, 655372, 21, 0, 655373, 3, 0, 655374, 6, 0, 655375, 29, 0, 655376, 6, 0, 655377, 7, 0, 655378, 6, 0, 655379, 7, 0, 655380, 7, 0, 655381, 6, 0, 655382, 25, 0, 720904, 26, 0, 720905, 0, 0, 720906, 27, 0, 720909, 28, 0, 720910, 0, 0, 720911, 1, 0, 720912, 0, 0, 720913, 1, 0, 720914, 0, 0, 720915, 1, 0, 720916, 1, 0, 720917, 4, 0, 720918, 24, 0, 786440, 28, 0, 786441, 6, 0, 786442, 7, 0, 786445, 26, 0, 786446, 6, 0, 786447, 7, 0, 786448, 6, 0, 786449, 7, 0, 786450, 4, 0, 786451, 12, 0, 786452, 13, 0, 786453, 22, 0, 851981, 23, 0, 851982, 13, 0, 851983, 12, 0, 851984, 13, 0, 851985, 12, 0, 851986, 22, 0 )

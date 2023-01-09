@@ -46,6 +46,7 @@ func _physics_process(delta):
 				checkTimer.start()
 			if attackCD.time_left == 0:
 				attackCD.start()
+				$EnemyShoot.play()
 		DEAD:
 			queue_free()
 		QUARANTINED:
