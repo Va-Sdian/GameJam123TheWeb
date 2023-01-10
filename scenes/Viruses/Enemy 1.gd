@@ -41,12 +41,14 @@ func _physics_process(delta):
 			velocity = velocity.move_toward(direction_to_base * MAX_SPEED, ACCELERATION * delta)
 			look_at(direction_to_base)
 		ATTACK:
-			weapon.shoot()
+			weapon.shoot(self)
 			if checkTimer.time_left == 0:
 				checkTimer.start()
 			if attackCD.time_left == 0:
 				attackCD.start()
 				$EnemyShootSounds.play()
+
+
 		DEAD:
 			queue_free()
 		QUARANTINED:

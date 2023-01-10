@@ -22,6 +22,11 @@ func _physics_process(delta):
 	input_vector.y = Input.get_axis("ui_up", "ui_down")
 	input_vector = input_vector.normalized()
 	
+	if Input.is_action_pressed("shoot"):
+		weapon.shoot(self)
+	if Input.is_action_pressed("capture"):
+		weapon.capture()
+	
 	if input_vector != Vector2.ZERO:
 		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELEARTION * delta)
 		$AnimationPlayer.play("crawl")
@@ -36,13 +41,13 @@ func _physics_process(delta):
 	
 	velocity = move_and_slide(velocity)
 
-func _unhandled_input(event):
-	if event.is_action_pressed("shoot"):
-		weapon.shoot()
-		$ShootSounds.play()
-	if event.is_action_pressed("capture"):
-		weapon.capture()
-		$CaptureSounds.play()
+#func _unhandled_input(event):
+#	if event.is_action_pressed("shoot"):
+#		weapon.shoot()
+#		$ShootSounds.play()
+#	if event.is_action_pressed("capture"):
+#		weapon.capture()
+#		$CaptureSounds.play()
 
 func handle_hit():
 	health_set.health -= 1
