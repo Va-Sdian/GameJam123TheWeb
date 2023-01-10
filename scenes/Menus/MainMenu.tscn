@@ -532,3 +532,5 @@ clip_text = true
 stream = ExtResource( 3 )
 autoplay = true
 bus = "Music"
+
+[node name="MenuMusic" type="Node2D" parent="."]

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Square 11.ogg-d68d59514acaf64ef526cbd2e75ada6c.oggst
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

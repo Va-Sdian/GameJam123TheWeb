@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Noise 1.ogg-714d60b62f220a7512e301630d7bf4d7.oggstr"
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

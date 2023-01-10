@@ -11,5 +11,5 @@ dest_files=[ "res://.import/ElPiano 5.ogg-926823fe74dd1be98e93d526e09cb793.oggst
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
