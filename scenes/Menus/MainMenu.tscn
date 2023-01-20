@@ -1,9 +1,20 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scripts/Buttons/Button.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/buttons/ButtonBlue13.png" type="Texture" id=2]
 [ext_resource path="res://music/Web surf loop 1.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Sprites/WebTileSet.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/MainBG.png" type="Texture" id=5]
+[ext_resource path="res://Themes and Fonts/TitleName_theme.tres" type="Theme" id=6]
+[ext_resource path="res://Themes and Fonts/Buttons_theme.tres" type="Theme" id=7]
+[ext_resource path="res://Sprites/border.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/borderright.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/bordertop2.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/button2.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/borderleft.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/borderbottomt.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/button1.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/button3.png" type="Texture" id=21]
 
 [sub_resource type="TileSet" id=2]
 0/name = "WebTileSet.png 0"
@@ -445,19 +456,20 @@
 pause_mode = 2
 
 [node name="TileMap" type="TileMap" parent="."]
+modulate = Color( 0.0784314, 0.4, 0.286275, 1 )
 position = Vector2( 136, 160 )
 z_index = -2
 tile_set = SubResource( 2 )
 cell_size = Vector2( 32, 32 )
 cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 format = 1
-tile_data = PoolIntArray( -196587, 9, 0, -196586, 0, 0, -196585, 0, 0, -196584, 0, 0, -131052, 9, 0, -131051, 0, 0, -131050, 0, 0, -131049, 0, 0, -131048, 0, 0, -131047, 9, 0, -65533, 15, 0, -65532, 0, 0, -65516, 0, 0, -65515, 0, 0, -65514, 0, 0, -65513, 0, 0, -65512, 0, 0, -65511, 9, 0, 3, 0, 0, 4, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 9, 0, 65539, 0, 0, 65540, 0, 0, 65541, 16, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 18, 0, 196611, 0, 0, 196612, 0, 0, 196613, 1, 0, 196614, 1, 0, 262147, 15, 0, 262148, 1, 0, 262149, 1, 0, 262150, 13, 0, 262153, 14, 0, 262154, 20, 0, 262155, 19, 0, 262156, 20, 0, 262157, 19, 0, 262158, 20, 0, 262159, 16, 0, 262163, 9, 0, 262164, 10, 0, 262165, 19, 0, 262166, 20, 0, 262167, 18, 0, 327684, 13, 0, 327685, 13, 0, 327688, 17, 0, 327689, 11, 0, 327690, 1, 0, 327691, 0, 0, 327692, 1, 0, 327693, 0, 0, 327694, 1, 0, 327695, 8, 0, 327698, 26, 0, 327699, 0, 0, 327700, 1, 0, 327701, 30, 0, 327702, 1, 0, 327703, 25, 0, 393224, 28, 0, 393225, 6, 0, 393226, 7, 0, 393227, 6, 0, 393228, 7, 0, 393229, 6, 0, 393230, 7, 0, 393231, 30, 0, 393232, 7, 0, 393234, 26, 0, 393235, 6, 0, 393236, 7, 0, 393237, 6, 0, 393238, 7, 0, 393239, 27, 0, 458760, 26, 0, 458761, 0, 0, 458762, 30, 0, 458763, 0, 0, 458764, 1, 0, 458765, 0, 0, 458766, 1, 0, 458767, 0, 0, 458768, 1, 0, 458770, 26, 0, 458771, 0, 0, 458772, 1, 0, 458773, 0, 0, 458774, 1, 0, 458775, 25, 0, 524296, 28, 0, 524297, 6, 0, 524298, 7, 0, 524299, 6, 0, 524300, 7, 0, 524301, 6, 0, 524302, 7, 0, 524303, 6, 0, 524304, 7, 0, 524306, 26, 0, 524307, 26, 0, 524308, 7, 0, 524309, 6, 0, 524310, 2, 0, 524311, 24, 0, 589832, 26, 0, 589833, 0, 0, 589834, 4, 0, 589835, 12, 0, 589836, 3, 0, 589837, 1, 0, 589838, 0, 0, 589839, 1, 0, 589842, 0, 0, 589843, 1, 0, 589844, 1, 0, 589845, 0, 0, 589846, 27, 0, 655368, 28, 0, 655369, 6, 0, 655370, 25, 0, 655372, 21, 0, 655373, 3, 0, 655377, 7, 0, 655378, 6, 0, 655379, 7, 0, 655380, 7, 0, 655381, 6, 0, 655382, 25, 0, 720904, 26, 0, 720905, 0, 0, 720906, 27, 0, 720912, 0, 0, 720913, 1, 0, 720914, 0, 0, 720915, 1, 0, 720916, 1, 0, 720917, 4, 0, 720918, 24, 0, 786440, 28, 0, 786441, 6, 0, 786442, 7, 0, 786446, 6, 0, 786447, 7, 0, 786448, 6, 0, 786449, 7, 0, 786450, 4, 0, 786451, 12, 0, 786452, 13, 0, 786453, 22, 0, 851981, 23, 0, 851982, 13, 0, 851983, 12, 0, 851984, 13, 0, 851985, 12, 0, 851986, 22, 0 )
+tile_data = PoolIntArray( -262149, 0, 0, -262148, 1, 0, -262147, 25, 0, -327657, 17, 0, -327656, 11, 0, -327655, 0, 0, -327654, 1, 0, -327653, 0, 0, -327652, 1, 0, -327651, 0, 0, -327650, 1, 0, -327649, 0, 0, -327648, 1, 0, -327647, 1, 0, -327646, 0, 0, -327645, 0, 0, -327644, 1, 0, -196613, 7, 0, -196612, 6, 0, -196611, 27, 0, -196610, 14, 0, -196609, 19, 0, -262144, 20, 0, -262143, 18, 0, -262123, 14, 0, -262122, 20, 0, -262121, 9, 0, -262120, 1, 0, -262119, 7, 0, -262118, 6, 0, -262117, 29, 0, -262116, 6, 0, -262115, 7, 0, -262114, 6, 0, -262113, 7, 0, -262112, 6, 0, -262111, 1, 0, -262110, 7, 0, -262109, 7, 0, -262108, 6, 0, -131077, 0, 0, -131076, 1, 0, -131075, 8, 0, -131074, 9, 0, -131073, 6, 0, -196608, 30, 0, -196607, 25, 0, -196588, 26, 0, -196587, 0, 0, -196586, 6, 0, -196585, 0, 0, -196584, 1, 0, -196583, 0, 0, -196582, 1, 0, -196581, 0, 0, -196580, 1, 0, -196579, 0, 0, -196578, 1, 0, -196577, 29, 0, -196576, 1, 0, -196575, 0, 0, -196574, 1, 0, -196573, 30, 0, -196572, 1, 0, -65541, 7, 0, -65540, 30, 0, -65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, 4, 0, -131071, 22, 0, -131050, 3, 0, -131049, 29, 0, -131048, 6, 0, -131047, 7, 0, -131046, 6, 0, -131045, 7, 0, -131044, 6, 0, -131043, 7, 0, -131042, 6, 0, -131041, 7, 0, -131040, 6, 0, -131039, 7, 0, -131038, 6, 0, -131037, 7, 0, -131036, 6, 0, -5, 0, 0, -4, 1, 0, -3, 7, 0, -2, 6, 0, -1, 2, 0, -65536, 24, 0, -65512, 26, 0, -65511, 0, 0, -65510, 1, 0, -65509, 0, 0, -65508, 1, 0, -65507, 0, 0, -65506, 1, 0, -65505, 0, 0, -65504, 1, 0, -65503, 0, 0, -65502, 1, 0, -65501, 0, 0, -65500, 1, 0, 65531, 7, 0, 65532, 6, 0, 65533, 0, 0, 65534, 1, 0, 65535, 27, 0, 23, 17, 0, 24, 11, 0, 25, 7, 0, 26, 6, 0, 27, 7, 0, 28, 6, 0, 29, 7, 0, 30, 6, 0, 31, 7, 0, 32, 6, 0, 33, 7, 0, 34, 6, 0, 35, 7, 0, 36, 6, 0, 131067, 0, 0, 131068, 1, 0, 131069, 7, 0, 131070, 6, 0, 131071, 8, 0, 65536, 19, 0, 65537, 16, 0, 65558, 14, 0, 65559, 9, 0, 65560, 1, 0, 65561, 0, 0, 65562, 1, 0, 65563, 0, 0, 65564, 1, 0, 65565, 29, 0, 65566, 1, 0, 65567, 0, 0, 65568, 1, 0, 65569, 0, 0, 65570, 1, 0, 65571, 0, 0, 65572, 1, 0, 196603, 29, 0, 196604, 6, 0, 196605, 0, 0, 196606, 1, 0, 196607, 7, 0, 131072, 0, 0, 131073, 27, 0, 131093, 14, 0, 131094, 11, 0, 131095, 29, 0, 131096, 5, 0, 131097, 7, 0, 131098, 6, 0, 131099, 7, 0, 131100, 6, 0, 131101, 7, 0, 131102, 6, 0, 131103, 7, 0, 131104, 6, 0, 131105, 30, 0, 131106, 6, 0, 131107, 7, 0, 131108, 6, 0, 262139, 0, 0, 262140, 1, 0, 262141, 7, 0, 262142, 29, 0, 262143, 4, 0, 196608, 5, 0, 196609, 10, 0, 196629, 23, 0, 196630, 13, 0, 196631, 22, 0, 196632, 23, 0, 196633, 5, 0, 196634, 0, 0, 196635, 1, 0, 196636, 0, 0, 196637, 1, 0, 196638, 0, 0, 196639, 1, 0, 196640, 0, 0, 196641, 1, 0, 196642, 0, 0, 196643, 1, 0, 196644, 1, 0, 327675, 7, 0, 327676, 6, 0, 327677, 0, 0, 327678, 1, 0, 327679, 25, 0, 262144, 26, 0, 262145, 2, 0, 262167, 14, 0, 262168, 19, 0, 262169, 30, 0, 262170, 7, 0, 262171, 6, 0, 262172, 7, 0, 262173, 6, 0, 262174, 7, 0, 262175, 6, 0, 262176, 7, 0, 262177, 6, 0, 262178, 7, 0, 262179, 6, 0, 262180, 1, 0, 393211, 0, 0, 393212, 1, 0, 393213, 7, 0, 393214, 4, 0, 393215, 22, 0, 327680, 23, 0, 327681, 24, 0, 327700, 17, 0, 327701, 19, 0, 327702, 20, 0, 327703, 11, 0, 327704, 1, 0, 327705, 0, 0, 327706, 1, 0, 327707, 0, 0, 327708, 29, 0, 327709, 0, 0, 327710, 1, 0, 327711, 0, 0, 327712, 1, 0, 327713, 0, 0, 327714, 1, 0, 327715, 0, 0, 327716, 1, 0, 458747, 7, 0, 458748, 6, 0, 458749, 0, 0, 458750, 25, 0, 393236, 28, 0, 393237, 7, 0, 393238, 1, 0, 393239, 7, 0, 393240, 6, 0, 393241, 7, 0, 393242, 6, 0, 393243, 7, 0, 393244, 6, 0, 393245, 7, 0, 393246, 6, 0, 393247, 29, 0, 393248, 6, 0, 393249, 7, 0, 393250, 6, 0, 393251, 7, 0, 393252, 6, 0, 524283, 0, 0, 524284, 1, 0, 524285, 30, 0, 524286, 8, 0, 524287, 16, 0, 458772, 23, 0, 458773, 13, 0, 458774, 12, 0, 458775, 5, 0, 458776, 7, 0, 458777, 0, 0, 458778, 1, 0, 458779, 0, 0, 458780, 1, 0, 458781, 0, 0, 458782, 1, 0, 458783, 0, 0, 458784, 1, 0, 458785, 0, 0, 458786, 1, 0, 458787, 0, 0, 458788, 1, 0, 589819, 7, 0, 589820, 6, 0, 589821, 7, 0, 589822, 6, 0, 589823, 25, 0, 524311, 23, 0, 524312, 3, 0, 524313, 7, 0, 524314, 6, 0, 524315, 7, 0, 524316, 6, 0, 524317, 7, 0, 524318, 6, 0, 524319, 7, 0, 524320, 6, 0, 524321, 7, 0, 524322, 6, 0, 524323, 7, 0, 524324, 6, 0, 655355, 0, 0, 655356, 1, 0, 655357, 4, 0, 655358, 12, 0, 655359, 10, 0, 589824, 18, 0, 589849, 21, 0, 589850, 5, 0, 589851, 0, 0, 589852, 1, 0, 589853, 0, 0, 589854, 1, 0, 589855, 0, 0, 589856, 1, 0, 589857, 0, 0, 589858, 1, 0, 589859, 0, 0, 589860, 1, 0, 720891, 7, 0, 720892, 4, 0, 720893, 22, 0, 720895, 23, 0, 655360, 24, 0, 655385, 17, 0, 655386, 11, 0, 655387, 7, 0, 655388, 6, 0, 655389, 30, 0, 655390, 6, 0, 655391, 7, 0, 655392, 6, 0, 655393, 7, 0, 655394, 6, 0, 655395, 7, 0, 655396, 6, 0, 786427, 0, 0, 786428, 8, 0, 786429, 18, 0, 720920, 14, 0, 720921, 11, 0, 720922, 0, 0, 720923, 1, 0, 720924, 0, 0, 720925, 1, 0, 720926, 0, 0, 720927, 29, 0, 720928, 0, 0, 720929, 1, 0, 720930, 0, 0, 720931, 0, 0, 720932, 1, 0, 851963, 0, 0, 851964, 1, 0, 851965, 10, 0, 851966, 20, 0, 851967, 16, 0, 786456, 26, 0, 786457, 0, 0, 786458, 1, 0, 786459, 6, 0, 786460, 7, 0, 786461, 6, 0, 786462, 7, 0, 786463, 6, 0, 786464, 7, 0, 786465, 6, 0, 786466, 7, 0, 786467, 7, 0, 786468, 6, 0, 917499, 7, 0, 917500, 6, 0, 917501, 0, 0, 917502, 7, 0, 917503, 10, 0, 851968, 18, 0, 851992, 21, 0, 851993, 12, 0, 851994, 5, 0, 851995, 0, 0, 851996, 1, 0, 851997, 0, 0, 851998, 1, 0, 851999, 0, 0, 852000, 1, 0, 852001, 0, 0, 852002, 1, 0, 852003, 30, 0, 852004, 1, 0, 983035, 0, 0, 983036, 0, 0, 983037, 7, 0, 983038, 6, 0, 983039, 0, 0, 917504, 8, 0, 917505, 20, 0, 917506, 16, 0, 917530, 26, 0, 917531, 0, 0, 917532, 29, 0, 917533, 0, 0, 917534, 1, 0, 917535, 0, 0, 917536, 1, 0, 917537, 0, 0, 917538, 1, 0, 917539, 0, 0, 917540, 1, 0, 1048571, 0, 0, 1048572, 1, 0, 1048573, 30, 0, 1048574, 1, 0, 1048575, 7, 0, 983040, 6, 0, 983041, 29, 0, 983042, 27, 0, 983062, 14, 0, 983063, 20, 0, 983064, 19, 0, 983065, 20, 0, 983066, 11, 0, 983067, 7, 0, 983068, 6, 0, 983069, 7, 0, 983070, 6, 0, 983071, 7, 0, 983072, 6, 0, 983073, 7, 0, 983074, 6, 0, 983075, 7, 0, 983076, 6, 0, 1114107, 7, 0, 1114108, 6, 0, 1114109, 7, 0, 1048597, 26, 0, 1048598, 1, 0, 1048599, 29, 0, 1048600, 1, 0, 1048601, 6, 0, 1048602, 0, 0, 1048603, 1, 0, 1048604, 6, 0, 1048605, 0, 0, 1048606, 7, 0, 1048607, 1, 0, 1048608, 6, 0, 1048609, 1, 0, 1048610, 1, 0, 1048611, 0, 0, 1048612, 7, 0 )
 
 [node name="Start Game" type="TextureButton" parent="."]
 margin_left = 384.0
-margin_top = 64.0
+margin_top = 220.0
 margin_right = 625.0
-margin_bottom = 125.0
+margin_bottom = 281.0
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 2 )
 expand = true
@@ -467,35 +479,17 @@ reference_path = "res://scenes/Menus/GameWindow.tscn"
 [node name="Label" type="Label" parent="Start Game"]
 margin_right = 239.0
 margin_bottom = 60.0
+theme = ExtResource( 7 )
 text = "Start Game"
-align = 1
-valign = 1
-clip_text = true
-
-[node name="Credits" type="TextureButton" parent="."]
-margin_left = 384.0
-margin_top = 320.0
-margin_right = 625.0
-margin_bottom = 381.0
-texture_normal = ExtResource( 2 )
-texture_pressed = ExtResource( 2 )
-expand = true
-script = ExtResource( 1 )
-reference_path = "res://scenes/Menus/Credits.tscn"
-
-[node name="Label" type="Label" parent="Credits"]
-margin_right = 239.0
-margin_bottom = 60.0
-text = "Credits"
 align = 1
 valign = 1
 clip_text = true
 
 [node name="Option" type="TextureButton" parent="."]
 margin_left = 384.0
-margin_top = 192.0
+margin_top = 310.0
 margin_right = 625.0
-margin_bottom = 253.0
+margin_bottom = 371.0
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 2 )
 expand = true
@@ -505,16 +499,37 @@ reference_path = "res://scenes/Menus/MusicControl.tscn"
 [node name="Label" type="Label" parent="Option"]
 margin_right = 239.0
 margin_bottom = 60.0
+theme = ExtResource( 7 )
 text = "Option"
+align = 1
+valign = 1
+clip_text = true
+
+[node name="Credits" type="TextureButton" parent="."]
+margin_left = 384.0
+margin_top = 400.0
+margin_right = 625.0
+margin_bottom = 461.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 2 )
+expand = true
+script = ExtResource( 1 )
+reference_path = "res://scenes/Menus/Credits.tscn"
+
+[node name="Label" type="Label" parent="Credits"]
+margin_right = 239.0
+margin_bottom = 60.0
+theme = ExtResource( 7 )
+text = "Credits"
 align = 1
 valign = 1
 clip_text = true
 
 [node name="Exit" type="TextureButton" parent="."]
 margin_left = 384.0
-margin_top = 456.0
+margin_top = 490.0
 margin_right = 625.0
-margin_bottom = 517.0
+margin_bottom = 551.0
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 2 )
 expand = true
@@ -523,6 +538,7 @@ script = ExtResource( 1 )
 [node name="Label" type="Label" parent="Exit"]
 margin_right = 239.0
 margin_bottom = 60.0
+theme = ExtResource( 7 )
 text = "Exit"
 align = 1
 valign = 1
@@ -534,3 +550,130 @@ autoplay = true
 bus = "Music"
 
 [node name="MenuMusic" type="Node2D" parent="."]
+
+[node name="MainBg" type="Sprite" parent="."]
+position = Vector2( 525, 367 )
+scale = Vector2( 1.4, 1.4 )
+z_index = -10
+texture = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 275.0
+margin_top = 47.0
+margin_right = 726.0
+margin_bottom = 223.0
+theme = ExtResource( 6 )
+text = "Web surfing is sometimes
+dangerous"
+align = 1
+valign = 1
+clip_text = true
+
+[node name="GUI" type="Control" parent="."]
+pause_mode = 2
+visible = false
+anchor_right = 0.5
+margin_right = 1024.0
+margin_bottom = 608.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Window" type="Control" parent="GUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TextureLeft" type="TextureRect" parent="GUI/Window"]
+anchor_top = 0.12
+anchor_right = 0.023
+anchor_bottom = 0.96
+margin_right = 0.447998
+rect_min_size = Vector2( 0, 70 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 18 )
+expand = true
+
+[node name="TextureBot" type="TextureRect" parent="GUI/Window"]
+anchor_top = 0.96
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 19 )
+expand = true
+
+[node name="TextureRight" type="TextureRect" parent="GUI/Window"]
+anchor_left = 0.977
+anchor_top = 0.12
+anchor_right = 1.0
+anchor_bottom = 0.96
+margin_left = -0.448059
+rect_min_size = Vector2( 0, 70 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 15 )
+expand = true
+
+[node name="TextureTop" type="TextureRect" parent="GUI/Window"]
+anchor_right = 1.0
+anchor_bottom = 0.12
+rect_min_size = Vector2( 0, 70 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 16 )
+expand = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GUI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -110.0
+margin_bottom = 33.0
+
+[node name="WindowButton2" type="TextureButton" parent="GUI/HBoxContainer"]
+margin_right = 34.0
+margin_bottom = 33.0
+rect_min_size = Vector2( 20, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.72
+texture_normal = ExtResource( 20 )
+texture_pressed = ExtResource( 20 )
+expand = true
+stretch_mode = 5
+
+[node name="WindowButton" type="TextureButton" parent="GUI/HBoxContainer"]
+margin_left = 38.0
+margin_right = 72.0
+margin_bottom = 33.0
+rect_min_size = Vector2( 20, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.72
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 17 )
+expand = true
+stretch_mode = 5
+
+[node name="ExitButton" type="TextureButton" parent="GUI/HBoxContainer"]
+margin_left = 76.0
+margin_right = 110.0
+margin_bottom = 33.0
+rect_min_size = Vector2( 20, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.72
+texture_normal = ExtResource( 21 )
+texture_pressed = ExtResource( 21 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 1 )
+
+[node name="BorderTexture" type="NinePatchRect" parent="GUI"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 11 )
+patch_margin_left = 12
+patch_margin_top = 31
+patch_margin_bottom = 12

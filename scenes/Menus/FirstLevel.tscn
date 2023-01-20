@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://music/Web surfing is so calm.ogg" type="AudioStream" id=1]
+[ext_resource path="res://music/Web surfing is sometimes difficult.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Sprites/GreenQuarantin.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/WebTileSet.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/RedSpawner.png" type="Texture" id=4]

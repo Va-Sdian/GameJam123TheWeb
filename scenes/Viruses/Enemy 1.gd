@@ -7,6 +7,7 @@ export var FRICTION = 700
 onready var base = null
 onready var Global = "/root/scripts/Globals/Global.gd"
 onready var checkTimer = $Check
+onready var DeathTimer = $DeathTimer
 onready var animationPlayer = $AnimationPlayer
 onready var enemy = $EnemyCollision
 onready var direction = Vector2.RIGHT
@@ -50,7 +51,11 @@ func _physics_process(delta):
 
 
 		DEAD:
-			queue_free()
+			DeathTimer.start()
+			attackCD.stop()
+			animationPlayer.play("death")
+#			if DeathTimer.time_left == 0: 
+#				queue_free()
 		QUARANTINED:
 			Global.score += 1
 			queue_free()
@@ -74,7 +79,7 @@ func _on_AttackCD_timeout():
 		state = ATTACK
 
 
-func handle_hit():
+func handle_hit(damage):
 	state = DEAD
 
 
@@ -87,3 +92,7 @@ func _on_AttackRadius_body_shape_entered(body_rid, body, body_shape_index, local
 	if body == base:
 		state = ATTACK
 		velocity = Vector2.ZERO
+
+
+func _on_DeathTimer_timeout():
+	queue_free()

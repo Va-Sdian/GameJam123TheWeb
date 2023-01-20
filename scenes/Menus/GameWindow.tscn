@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://music/Web surfing is so calm.ogg" type="AudioStream" id=2]
@@ -12,8 +12,12 @@
 [ext_resource path="res://Sprites/buttons/ButtonBlue13.png" type="Texture" id=10]
 [ext_resource path="res://scripts/MusicSettings.gd" type="Script" id=11]
 [ext_resource path="res://music/Web surf loop 3.ogg" type="AudioStream" id=12]
-[ext_resource path="res://sounds/Square 4.ogg" type="AudioStream" id=13]
+[ext_resource path="res://sounds/Square 12.ogg" type="AudioStream" id=13]
 [ext_resource path="res://scripts/MusicSettingsWithoutPlayStopButtons.gd" type="Script" id=14]
+[ext_resource path="res://Sprites/WebBGForum.png" type="Texture" id=15]
+[ext_resource path="res://scenes/Misc/GUI.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Themes and Fonts/Buttons_theme.tres" type="Theme" id=17]
+[ext_resource path="res://scenes/Menus/TestHPLabel.gd" type="Script" id=18]
 
 [node name="GameWindow" type="Node"]
 script = ExtResource( 3 )
@@ -21,15 +25,17 @@ script = ExtResource( 3 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 530, 287 )
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+[node name="LevelMusic" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 2 )
+volume_db = -10.0
 autoplay = true
 bus = "Music"
 
 [node name="BulletManager" parent="." instance=ExtResource( 4 )]
 
 [node name="TileMap" parent="." instance=ExtResource( 5 )]
+modulate = Color( 0.286275, 0.701961, 0.286275, 1 )
 
 [node name="StaticBody2D" parent="." instance=ExtResource( 7 )]
 position = Vector2( 386, 380 )
@@ -39,6 +45,8 @@ position = Vector2( 696, 194 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 100
+
+[node name="GUI" parent="CanvasLayer" instance=ExtResource( 16 )]
 
 [node name="Pause" type="Control" parent="CanvasLayer"]
 pause_mode = 2
@@ -148,10 +156,70 @@ reference_path = "res://scenes/Menus/MainMenu.tscn"
 [node name="Label" type="Label" parent="CanvasLayer/Pause/TextureButton"]
 margin_right = 239.0
 margin_bottom = 60.0
+theme = ExtResource( 17 )
 text = "Exit to menu"
 align = 1
 valign = 1
 clip_text = true
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="WebBgForum" type="Sprite" parent="Background"]
+position = Vector2( 364, 164.25 )
+scale = Vector2( 1.5, 1.5 )
+z_index = -10
+texture = ExtResource( 15 )
+
+[node name="WebBgForum2" type="Sprite" parent="Background"]
+position = Vector2( 364, 248.25 )
+scale = Vector2( 1.5, 1.5 )
+z_index = -10
+texture = ExtResource( 15 )
+
+[node name="WebBgForum3" type="Sprite" parent="Background"]
+position = Vector2( 363, 332.25 )
+scale = Vector2( 1.5, 1.5 )
+z_index = -10
+texture = ExtResource( 15 )
+
+[node name="WebBgForum4" type="Sprite" parent="Background"]
+position = Vector2( 714.5, 164.5 )
+scale = Vector2( 1.5, 1.5 )
+z_index = -10
+texture = ExtResource( 15 )
+
+[node name="WebBgForum5" type="Sprite" parent="Background"]
+position = Vector2( 714.5, 248.5 )
+scale = Vector2( 1.5, 1.5 )
+z_index = -10
+texture = ExtResource( 15 )
+
+[node name="WebBgForum6" type="Sprite" parent="Background"]
+position = Vector2( 713.5, 332.5 )
+scale = Vector2( 1.5, 1.5 )
+z_index = -10
+texture = ExtResource( 15 )
+
+[node name="WebBgForum7" type="Sprite" parent="Background"]
+position = Vector2( 362.5, 416.5 )
+scale = Vector2( 1.5, 1.5 )
+z_index = -10
+texture = ExtResource( 15 )
+
+[node name="WebBgForum8" type="Sprite" parent="Background"]
+position = Vector2( 713, 416.75 )
+scale = Vector2( 1.5, 1.5 )
+z_index = -10
+texture = ExtResource( 15 )
+
+[node name="TestHPLabel" type="Label" parent="."]
+visible = false
+margin_left = 448.0
+margin_top = 248.0
+margin_right = 544.0
+margin_bottom = 272.0
+text = "Hello there"
+script = ExtResource( 18 )
 
 [connection signal="value_changed" from="CanvasLayer/Pause/MusicControl/GridContainer/MusicSettings/HSlider" to="CanvasLayer/Pause/MusicControl/GridContainer/MusicSettings" method="_on_HSlider_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/Pause/MusicControl/GridContainer/SFXSettings/HSlider" to="CanvasLayer/Pause/MusicControl/GridContainer/SFXSettings" method="_on_HSlider_value_changed"]

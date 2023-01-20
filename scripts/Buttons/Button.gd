@@ -13,7 +13,7 @@ func _ready():
 func _on_Button_mouse_entered():
 	grab_focus()
 
-func _on_Button_Pressed():
+func _on_Button_Pressed() -> void:
 	if(reference_path != ""):
 		get_tree().change_scene(reference_path)
 		get_tree().paused = false
