@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dabiiqs8baw5r"
+path="res://.godot/imported/Noise 6.ogg-9c90f2a8ebf60ea0a992940554752579.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/Noise 6.ogg"
+dest_files=["res://.godot/imported/Noise 6.ogg-9c90f2a8ebf60ea0a992940554752579.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/RS 2.ogg-a8e81f8a467ef4fd39c1d8c9f6256f3e.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://6gybl6ned7gx"
+path="res://.godot/imported/RS 2.ogg-a8e81f8a467ef4fd39c1d8c9f6256f3e.oggvorbisstr"
 
 [deps]
 
 source_file="res://sounds/RS 2.ogg"
-dest_files=[ "res://.import/RS 2.ogg-a8e81f8a467ef4fd39c1d8c9f6256f3e.oggstr" ]
+dest_files=["res://.godot/imported/RS 2.ogg-a8e81f8a467ef4fd39c1d8c9f6256f3e.oggvorbisstr"]
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

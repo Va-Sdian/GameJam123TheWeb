@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/Square 8.ogg-58a7b8bd6b6ef40ee49db93932c38552.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dnhr2d2pufni0"
+path="res://.godot/imported/Square 8.ogg-58a7b8bd6b6ef40ee49db93932c38552.oggvorbisstr"
 
 [deps]
 
 source_file="res://sounds/Square 8.ogg"
-dest_files=[ "res://.import/Square 8.ogg-58a7b8bd6b6ef40ee49db93932c38552.oggstr" ]
+dest_files=["res://.godot/imported/Square 8.ogg-58a7b8bd6b6ef40ee49db93932c38552.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

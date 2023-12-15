@@ -1,315 +1,362 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=37 format=3 uid="uid://dg5yr6nrym62g"]
 
-[ext_resource path="res://Sprites/AV-Head.png" type="Texture" id=1]
-[ext_resource path="res://scenes/Player/Player.gd" type="Script" id=2]
-[ext_resource path="res://scenes/Misc/Weapon.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Sprites/AV-Sheet.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/AV-Death.png" type="Texture" id=6]
-[ext_resource path="res://sounds/Square 2.ogg" type="AudioStream" id=7]
-[ext_resource path="res://sounds/Square 5.ogg" type="AudioStream" id=8]
-[ext_resource path="res://sounds/Square 3.ogg" type="AudioStream" id=9]
-[ext_resource path="res://sounds/Square 1.ogg" type="AudioStream" id=10]
-[ext_resource path="res://sounds/Square 4.ogg" type="AudioStream" id=11]
-[ext_resource path="res://sounds/Square 6.ogg" type="AudioStream" id=12]
-[ext_resource path="res://sounds/Square 7.ogg" type="AudioStream" id=13]
-[ext_resource path="res://sounds/Square 8.ogg" type="AudioStream" id=14]
-[ext_resource path="res://scenes/Player/ShootSounds.gd" type="Script" id=15]
-[ext_resource path="res://sounds/ElPiano 1.ogg" type="AudioStream" id=16]
-[ext_resource path="res://sounds/ElPiano 2.ogg" type="AudioStream" id=17]
-[ext_resource path="res://sounds/ElPiano 4.ogg" type="AudioStream" id=18]
-[ext_resource path="res://sounds/ElPiano 5.ogg" type="AudioStream" id=19]
-[ext_resource path="res://sounds/ElPiano 6.ogg" type="AudioStream" id=20]
-[ext_resource path="res://scenes/Player/CaptureSounds.gd" type="Script" id=21]
+[ext_resource type="Texture2D" uid="uid://dbx6do1asn3x5" path="res://Sprites/AV-Head.png" id="1"]
+[ext_resource type="Script" path="res://scenes/Player/Player.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://d3rhg44n537rq" path="res://scenes/Misc/Weapon.tscn" id="3"]
+[ext_resource type="Script" path="res://scripts/Misc/PlayerCamera2D.gd" id="4"]
+[ext_resource type="PackedScene" uid="uid://wy1a6p8n4vc5" path="res://scenes/Misc/Bullet.tscn" id="4_fhp23"]
+[ext_resource type="Texture2D" uid="uid://cwo62gfykvacs" path="res://Sprites/AV-Sheet.png" id="5"]
+[ext_resource type="PackedScene" uid="uid://c7mo1gdbq88cb" path="res://scenes/Misc/BulletCapture.tscn" id="5_7npat"]
+[ext_resource type="Texture2D" uid="uid://bq638m16t66mp" path="res://Sprites/AV-Death.png" id="6"]
+[ext_resource type="AudioStream" uid="uid://xkyq0bw0ko4p" path="res://sounds/Square 2.ogg" id="7"]
+[ext_resource type="AudioStream" uid="uid://bdp5258h4s54" path="res://sounds/Square 5.ogg" id="8"]
+[ext_resource type="AudioStream" uid="uid://doyw6q20xkmiq" path="res://sounds/Square 3.ogg" id="9"]
+[ext_resource type="AudioStream" uid="uid://xbhrgvlbhmt3" path="res://sounds/Square 1.ogg" id="10"]
+[ext_resource type="AudioStream" uid="uid://bmt8r6i41m3j8" path="res://sounds/Square 4.ogg" id="11"]
+[ext_resource type="AudioStream" uid="uid://q1mrsv7mt6wu" path="res://sounds/Square 6.ogg" id="12"]
+[ext_resource type="AudioStream" uid="uid://d2g4686brhi3e" path="res://sounds/Square 7.ogg" id="13"]
+[ext_resource type="AudioStream" uid="uid://dnhr2d2pufni0" path="res://sounds/Square 8.ogg" id="14"]
+[ext_resource type="Script" path="res://scenes/Player/ShootSounds.gd" id="15"]
+[ext_resource type="AudioStream" uid="uid://c5shmem18do5q" path="res://sounds/ElPiano 1.ogg" id="16"]
+[ext_resource type="AudioStream" uid="uid://bbw1ck2w46dnk" path="res://sounds/ElPiano 2.ogg" id="17"]
+[ext_resource type="AudioStream" uid="uid://cnqkbns0i76wg" path="res://sounds/ElPiano 4.ogg" id="18"]
+[ext_resource type="AudioStream" uid="uid://dkuput8inxkqb" path="res://sounds/ElPiano 5.ogg" id="19"]
+[ext_resource type="AudioStream" uid="uid://dk0t1sclj1c6h" path="res://sounds/ElPiano 6.ogg" id="20"]
+[ext_resource type="Script" path="res://scenes/Player/CaptureSounds.gd" id="21"]
+[ext_resource type="Material" uid="uid://d0cxkaxjimu0d" path="res://Particles/player_damage_particle_process_material.tres" id="24_etsxo"]
+[ext_resource type="Material" uid="uid://8lpkbsi8dfvo" path="res://Particles/player_death_particle_process_material.tres" id="25_ic1ue"]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id="1"]
+radius = 20.0998
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="CircleShape2D" id="CircleShape2D_4vs0m"]
+radius = 10.0499
+
+[sub_resource type="Animation" id="4"]
 length = 0.001
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Death:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("AntiVirus:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("Legs:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id="2"]
 resource_name = "crawl"
 length = 0.8
-loop = true
+loop_mode = 1
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Legs:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Death:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ false ]
+"values": [false]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("Legs:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("AntiVirus:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id="3"]
 resource_name = "death"
 length = 0.7
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Death:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ 0, 1, 2, 3, 4, 5 ]
+"values": [0, 1, 2, 3, 4, 5]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Death:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = false
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.6, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.1, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [ false, true, true, false ]
+"values": [false, true, true, false]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("Legs:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = false
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ true, false ]
+"values": [true, false]
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("AntiVirus:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = false
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ true, false ]
+"values": [true, false]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=5]
-animation = "death"
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nk2g8"]
+_data = {
+"RESET": SubResource("4"),
+"crawl": SubResource("2"),
+"death": SubResource("3")
+}
 
-[sub_resource type="AnimationNodeTransition" id=6]
-input_count = 3
+[sub_resource type="AnimationNodeAnimation" id="5"]
+animation = &"death"
+
+[sub_resource type="AnimationNodeTransition" id="6"]
 input_0/name = "idle"
 input_0/auto_advance = false
+input_0/reset = true
 input_1/name = "crawl"
 input_1/auto_advance = false
+input_1/reset = true
 input_2/name = "death"
 input_2/auto_advance = false
+input_2/reset = true
 
-[sub_resource type="AnimationNodeAnimation" id=7]
-animation = "crawl"
+[sub_resource type="AnimationNodeAnimation" id="7"]
+animation = &"crawl"
 
-[sub_resource type="AnimationNodeAnimation" id=8]
-animation = "RESET"
+[sub_resource type="AnimationNodeAnimation" id="8"]
+animation = &"RESET"
 
-[sub_resource type="AnimationNodeBlendTree" id=9]
-graph_offset = Vector2( 122.89, 19.5461 )
-nodes/Animation/node = SubResource( 5 )
-nodes/Animation/position = Vector2( 0, 220 )
-nodes/Transition/node = SubResource( 6 )
-nodes/Transition/position = Vector2( 255.767, 175.038 )
-nodes/crawl/node = SubResource( 7 )
-nodes/crawl/position = Vector2( 0, 100 )
-nodes/idle/node = SubResource( 8 )
-nodes/idle/position = Vector2( 0, -40 )
-nodes/output/position = Vector2( 460, 160 )
-node_connections = [ "Transition", 0, "idle", "Transition", 1, "crawl", "Transition", 2, "Animation", "output", 0, "Transition" ]
+[sub_resource type="AnimationNodeBlendTree" id="9"]
+graph_offset = Vector2(-431.926, -8.35191)
+nodes/Animation/node = SubResource("5")
+nodes/Animation/position = Vector2(0, 220)
+nodes/Transition/node = SubResource("6")
+nodes/Transition/position = Vector2(240, 100)
+nodes/crawl/node = SubResource("7")
+nodes/crawl/position = Vector2(0, 100)
+nodes/idle/node = SubResource("8")
+nodes/idle/position = Vector2(0, -40)
+nodes/output/position = Vector2(460, 160)
+node_connections = [&"output", 0, &"Transition", &"Transition", 0, &"idle", &"Transition", 1, &"crawl", &"Transition", 2, &"Animation"]
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["target"]]
+collision_layer = 4
+collision_mask = 11
+script = ExtResource("2")
+
+[node name="AntiVirus" type="Sprite2D" parent="."]
 rotation = -1.5708
-collision_mask = 5
-script = ExtResource( 2 )
+texture = ExtResource("1")
 
-[node name="AntiVirus" type="Sprite" parent="."]
+[node name="Weapon" parent="AntiVirus" instance=ExtResource("3")]
+position = Vector2(-6.24935e-05, 17)
+Bullet = ExtResource("4_fhp23")
+BulletCapture = ExtResource("5_7npat")
+
+[node name="AreaForDetection" type="Area2D" parent="."]
 rotation = -1.5708
-texture = ExtResource( 1 )
+collision_layer = 4
+collision_mask = 32
 
-[node name="Weapon" parent="AntiVirus" instance=ExtResource( 3 )]
-position = Vector2( -6.24935e-05, 17 )
+[node name="PlayerDetectionCollision" type="CollisionShape2D" parent="AreaForDetection"]
+shape = SubResource("1")
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]
 rotation = -1.5708
-shape = SubResource( 1 )
+shape = SubResource("CircleShape2D_4vs0m")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-rotation = -1.5708
-current = true
-zoom = Vector2( 0.5, 0.5 )
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-smoothing_enabled = true
+zoom = Vector2(2, 2)
+position_smoothing_speed = 2.0
+drag_horizontal_enabled = true
+drag_left_margin = 0.11
+drag_right_margin = 0.11
+editor_draw_drag_margin = true
+script = ExtResource("4")
 
-[node name="Legs" type="Sprite" parent="."]
-rotation = -1.5708
+[node name="Legs" type="Sprite2D" parent="."]
 z_index = -1
-texture = ExtResource( 5 )
+rotation = 1.5708
+texture = ExtResource("5")
 hframes = 3
 vframes = 3
-frame = 6
+frame = 3
 
-[node name="Death" type="Sprite" parent="."]
+[node name="Death" type="Sprite2D" parent="."]
 visible = false
-position = Vector2( -3.61999e-06, 1 )
+position = Vector2(-3.61999e-06, 1)
 rotation = 1.5708
-texture = ExtResource( 6 )
+texture = ExtResource("6")
 flip_v = true
 hframes = 3
 vframes = 2
 frame = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/RESET = SubResource( 4 )
-anims/crawl = SubResource( 2 )
-anims/death = SubResource( 3 )
+libraries = {
+"": SubResource("AnimationLibrary_nk2g8")
+}
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 9 )
+tree_root = SubResource("9")
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/Transition/current = 0
+parameters/Transition/current_state = "idle"
+parameters/Transition/transition_request = ""
+parameters/Transition/current_index = 0
 
 [node name="CaptureSounds" type="Node2D" parent="."]
-script = ExtResource( 21 )
+script = ExtResource("21")
 
 [node name="ElPiano1" type="AudioStreamPlayer2D" parent="CaptureSounds"]
-stream = ExtResource( 16 )
-bus = "SFX"
+stream = ExtResource("16")
+bus = &"SFX"
 
 [node name="ElPiano2" type="AudioStreamPlayer2D" parent="CaptureSounds"]
-stream = ExtResource( 17 )
-bus = "SFX"
+stream = ExtResource("17")
+bus = &"SFX"
 
 [node name="ElPiano3" type="AudioStreamPlayer2D" parent="CaptureSounds"]
-stream = ExtResource( 18 )
-bus = "SFX"
+stream = ExtResource("18")
+bus = &"SFX"
 
 [node name="ElPiano4" type="AudioStreamPlayer2D" parent="CaptureSounds"]
-stream = ExtResource( 19 )
-bus = "SFX"
+stream = ExtResource("19")
+bus = &"SFX"
 
 [node name="ElPiano5" type="AudioStreamPlayer2D" parent="CaptureSounds"]
-stream = ExtResource( 20 )
-bus = "SFX"
+stream = ExtResource("20")
+bus = &"SFX"
 
 [node name="ShootSounds" type="Node2D" parent="."]
-script = ExtResource( 15 )
+script = ExtResource("15")
 
 [node name="Square1" type="AudioStreamPlayer2D" parent="ShootSounds"]
-stream = ExtResource( 10 )
-bus = "SFX"
+stream = ExtResource("10")
+bus = &"SFX"
 
 [node name="Square2" type="AudioStreamPlayer2D" parent="ShootSounds"]
-stream = ExtResource( 7 )
+stream = ExtResource("7")
 volume_db = -4.37
-bus = "SFX"
+bus = &"SFX"
 
 [node name="Square3" type="AudioStreamPlayer2D" parent="ShootSounds"]
-stream = ExtResource( 9 )
-bus = "SFX"
+stream = ExtResource("9")
+bus = &"SFX"
 
 [node name="Square4" type="AudioStreamPlayer2D" parent="ShootSounds"]
-stream = ExtResource( 11 )
-bus = "SFX"
+stream = ExtResource("11")
+bus = &"SFX"
 
 [node name="Square5" type="AudioStreamPlayer2D" parent="ShootSounds"]
-stream = ExtResource( 8 )
-bus = "SFX"
+stream = ExtResource("8")
+bus = &"SFX"
 
 [node name="Square6" type="AudioStreamPlayer2D" parent="ShootSounds"]
-stream = ExtResource( 12 )
-bus = "SFX"
+stream = ExtResource("12")
+bus = &"SFX"
 
 [node name="Square7" type="AudioStreamPlayer2D" parent="ShootSounds"]
-stream = ExtResource( 13 )
-bus = "SFX"
+stream = ExtResource("13")
+bus = &"SFX"
 
 [node name="Square8" type="AudioStreamPlayer2D" parent="ShootSounds"]
-stream = ExtResource( 14 )
-bus = "SFX"
+stream = ExtResource("14")
+bus = &"SFX"
 
 [node name="DeathTimer" type="Timer" parent="."]
 wait_time = 1.1
 one_shot = true
+
+[node name="damageParticles" type="GPUParticles2D" parent="."]
+emitting = false
+process_material = ExtResource("24_etsxo")
+one_shot = true
+explosiveness = 0.42
+randomness = 0.06
+
+[node name="deathParticles" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 30
+process_material = ExtResource("25_ic1ue")
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.54
+randomness = 0.13

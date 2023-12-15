@@ -1,94 +1,90 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=17 format=3 uid="uid://d3rhg44n537rq"]
 
-[ext_resource path="res://scenes/Misc/Weapon.gd" type="Script" id=1]
-[ext_resource path="res://scenes/Misc/Bullet.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/Player/ShootSounds.gd" type="Script" id=3]
-[ext_resource path="res://sounds/Square 5.ogg" type="AudioStream" id=4]
-[ext_resource path="res://sounds/Square 3.ogg" type="AudioStream" id=5]
-[ext_resource path="res://sounds/Square 1.ogg" type="AudioStream" id=6]
-[ext_resource path="res://sounds/Square 2.ogg" type="AudioStream" id=7]
-[ext_resource path="res://sounds/Square 4.ogg" type="AudioStream" id=8]
-[ext_resource path="res://sounds/Square 6.ogg" type="AudioStream" id=9]
-[ext_resource path="res://sounds/Square 7.ogg" type="AudioStream" id=10]
-[ext_resource path="res://sounds/ElPiano 2.ogg" type="AudioStream" id=11]
-[ext_resource path="res://sounds/ElPiano 4.ogg" type="AudioStream" id=12]
-[ext_resource path="res://sounds/ElPiano 5.ogg" type="AudioStream" id=13]
-[ext_resource path="res://sounds/Square 8.ogg" type="AudioStream" id=14]
-[ext_resource path="res://sounds/ElPiano 1.ogg" type="AudioStream" id=15]
-[ext_resource path="res://sounds/ElPiano 6.ogg" type="AudioStream" id=16]
-[ext_resource path="res://scenes/Player/CaptureSounds.gd" type="Script" id=17]
-[ext_resource path="res://scenes/Misc/BulletCapture.tscn" type="PackedScene" id=18]
+[ext_resource type="Script" path="res://scenes/Misc/Weapon.gd" id="1"]
+[ext_resource type="Script" path="res://scenes/Player/ShootSounds.gd" id="3"]
+[ext_resource type="AudioStream" uid="uid://bdp5258h4s54" path="res://sounds/Square 5.ogg" id="4"]
+[ext_resource type="AudioStream" uid="uid://doyw6q20xkmiq" path="res://sounds/Square 3.ogg" id="5"]
+[ext_resource type="AudioStream" uid="uid://xbhrgvlbhmt3" path="res://sounds/Square 1.ogg" id="6"]
+[ext_resource type="AudioStream" uid="uid://xkyq0bw0ko4p" path="res://sounds/Square 2.ogg" id="7"]
+[ext_resource type="AudioStream" uid="uid://bmt8r6i41m3j8" path="res://sounds/Square 4.ogg" id="8"]
+[ext_resource type="AudioStream" uid="uid://q1mrsv7mt6wu" path="res://sounds/Square 6.ogg" id="9"]
+[ext_resource type="AudioStream" uid="uid://d2g4686brhi3e" path="res://sounds/Square 7.ogg" id="10"]
+[ext_resource type="AudioStream" uid="uid://bbw1ck2w46dnk" path="res://sounds/ElPiano 2.ogg" id="11"]
+[ext_resource type="AudioStream" uid="uid://cnqkbns0i76wg" path="res://sounds/ElPiano 4.ogg" id="12"]
+[ext_resource type="AudioStream" uid="uid://dkuput8inxkqb" path="res://sounds/ElPiano 5.ogg" id="13"]
+[ext_resource type="AudioStream" uid="uid://dnhr2d2pufni0" path="res://sounds/Square 8.ogg" id="14"]
+[ext_resource type="AudioStream" uid="uid://c5shmem18do5q" path="res://sounds/ElPiano 1.ogg" id="15"]
+[ext_resource type="AudioStream" uid="uid://dk0t1sclj1c6h" path="res://sounds/ElPiano 6.ogg" id="16"]
+[ext_resource type="Script" path="res://scenes/Player/CaptureSounds.gd" id="17"]
 
 [node name="Weapon" type="Node2D"]
-script = ExtResource( 1 )
-Bullet = ExtResource( 2 )
-BulletCapture = ExtResource( 18 )
+script = ExtResource("1")
 
-[node name="GunEnd" type="Position2D" parent="."]
-position = Vector2( 0, 2 )
+[node name="GunEnd" type="Marker2D" parent="."]
+position = Vector2(0, 2)
 
-[node name="GunDirection" type="Position2D" parent="."]
-position = Vector2( 0, 4 )
+[node name="GunDirection" type="Marker2D" parent="."]
+position = Vector2(0, 4)
 
 [node name="Cooldown" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
 
 [node name="CaptureSounds" type="Node2D" parent="."]
-script = ExtResource( 17 )
+script = ExtResource("17")
 
 [node name="ElPiano1" type="AudioStreamPlayer2D" parent="CaptureSounds"]
-stream = ExtResource( 15 )
-bus = "SFX"
+stream = ExtResource("15")
+bus = &"SFX"
 
 [node name="ElPiano2" type="AudioStreamPlayer2D" parent="CaptureSounds"]
-stream = ExtResource( 11 )
-bus = "SFX"
+stream = ExtResource("11")
+bus = &"SFX"
 
 [node name="ElPiano3" type="AudioStreamPlayer2D" parent="CaptureSounds"]
-stream = ExtResource( 12 )
-bus = "SFX"
+stream = ExtResource("12")
+bus = &"SFX"
 
 [node name="ElPiano4" type="AudioStreamPlayer2D" parent="CaptureSounds"]
-stream = ExtResource( 13 )
-bus = "SFX"
+stream = ExtResource("13")
+bus = &"SFX"
 
 [node name="ElPiano5" type="AudioStreamPlayer2D" parent="CaptureSounds"]
-stream = ExtResource( 16 )
-bus = "SFX"
+stream = ExtResource("16")
+bus = &"SFX"
 
 [node name="ShootSounds" type="Node2D" parent="."]
-script = ExtResource( 3 )
+script = ExtResource("3")
 
 [node name="Square1" type="AudioStreamPlayer2D" parent="ShootSounds"]
-stream = ExtResource( 6 )
-bus = "SFX"
+stream = ExtResource("6")
+bus = &"SFX"
 
 [node name="Square2" type="AudioStreamPlayer2D" parent="ShootSounds"]
-stream = ExtResource( 7 )
+stream = ExtResource("7")
 volume_db = -4.37
-bus = "SFX"
+bus = &"SFX"
 
 [node name="Square3" type="AudioStreamPlayer2D" parent="ShootSounds"]
-stream = ExtResource( 5 )
-bus = "SFX"
+stream = ExtResource("5")
+bus = &"SFX"
 
 [node name="Square4" type="AudioStreamPlayer2D" parent="ShootSounds"]
-stream = ExtResource( 8 )
-bus = "SFX"
+stream = ExtResource("8")
+bus = &"SFX"
 
 [node name="Square5" type="AudioStreamPlayer2D" parent="ShootSounds"]
-stream = ExtResource( 4 )
-bus = "SFX"
+stream = ExtResource("4")
+bus = &"SFX"
 
 [node name="Square6" type="AudioStreamPlayer2D" parent="ShootSounds"]
-stream = ExtResource( 9 )
-bus = "SFX"
+stream = ExtResource("9")
+bus = &"SFX"
 
 [node name="Square7" type="AudioStreamPlayer2D" parent="ShootSounds"]
-stream = ExtResource( 10 )
-bus = "SFX"
+stream = ExtResource("10")
+bus = &"SFX"
 
 [node name="Square8" type="AudioStreamPlayer2D" parent="ShootSounds"]
-stream = ExtResource( 14 )
-bus = "SFX"
+stream = ExtResource("14")
+bus = &"SFX"

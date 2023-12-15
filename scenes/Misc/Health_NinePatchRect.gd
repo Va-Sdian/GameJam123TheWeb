@@ -3,9 +3,9 @@ extends NinePatchRect
 
 class_name Health
 
-onready var hp_label = $HP_Label
-#export (int) var health = 2 setget set_health, get_health
-#var health setget set_health, get_health
+@onready var hp_label = $HP_Label
+#export (int) var health = 2 : get = get_health, set = set_health
+#var health : get = get_health, set = set_health
 #
 #func set_health(new_health: int):
 #	health = clamp(new_health, 0, health)

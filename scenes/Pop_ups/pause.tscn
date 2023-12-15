@@ -1,0 +1,122 @@
+[gd_scene load_steps=9 format=3 uid="uid://co8678u6tf1db"]
+
+[ext_resource type="Script" path="res://scripts/Globals/Pause.gd" id="1_m4kvh"]
+[ext_resource type="Script" path="res://scripts/MusicSettingsWithoutPlayStopButtons.gd" id="2_fb6sv"]
+[ext_resource type="Script" path="res://scripts/MusicSettings.gd" id="3_7bh77"]
+[ext_resource type="AudioStream" uid="uid://c17e0meewsjbp" path="res://music/Web surf loop 3.ogg" id="4_aj0bq"]
+[ext_resource type="AudioStream" uid="uid://c7lbkda70cowo" path="res://sounds/Square 12.ogg" id="5_ve6ln"]
+[ext_resource type="Texture2D" uid="uid://bdnihj2pkodie" path="res://Sprites/buttons/ButtonBlue13.png" id="6_rxvj2"]
+[ext_resource type="Script" path="res://scripts/Buttons/Button.gd" id="7_dt1ng"]
+[ext_resource type="Theme" uid="uid://bkm8kucwa6aa7" path="res://Themes and Fonts/Buttons_theme.tres" id="8_hyt0u"]
+
+[node name="Pause" type="Control"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 280.0
+offset_top = 144.0
+offset_right = 784.0
+offset_bottom = 432.0
+script = ExtResource("1_m4kvh")
+
+[node name="BlackOverlay" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 16.0
+offset_right = 488.0
+offset_bottom = 280.0
+color = Color(0, 0, 0, 0.733333)
+
+[node name="MusicControl" type="Control" parent="."]
+process_mode = 2
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="GridContainer" type="GridContainer" parent="MusicControl"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 80.0
+offset_right = 472.0
+offset_bottom = 144.0
+
+[node name="MusicSettings" type="VBoxContainer" parent="MusicControl/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("2_fb6sv")
+label = "Music"
+bus_name = "Music"
+
+[node name="Label" type="Label" parent="MusicControl/GridContainer/MusicSettings"]
+layout_mode = 2
+text = "Music Volume"
+
+[node name="HSlider" type="HSlider" parent="MusicControl/GridContainer/MusicSettings"]
+layout_mode = 2
+min_value = -24.0
+max_value = 0.0
+
+[node name="SFXSettings" type="VBoxContainer" parent="MusicControl/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_7bh77")
+label = "SFX"
+bus_name = "SFX"
+audio_stream_player_path = NodePath("../../SFXPlayer")
+
+[node name="Label" type="Label" parent="MusicControl/GridContainer/SFXSettings"]
+layout_mode = 2
+text = "SFX Volume"
+
+[node name="HSlider" type="HSlider" parent="MusicControl/GridContainer/SFXSettings"]
+layout_mode = 2
+min_value = -24.0
+max_value = 0.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MusicControl/GridContainer/SFXSettings"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MusicControl/GridContainer/SFXSettings/HBoxContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="Stop" type="Button" parent="MusicControl/GridContainer/SFXSettings/HBoxContainer"]
+layout_mode = 2
+text = "Stop"
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="MusicControl"]
+stream = ExtResource("4_aj0bq")
+bus = &"Music"
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="MusicControl"]
+stream = ExtResource("5_ve6ln")
+bus = &"SFX"
+
+[node name="TextureButton" type="TextureButton" parent="."]
+process_mode = 2
+layout_mode = 0
+offset_left = 120.0
+offset_top = 200.0
+offset_right = 361.0
+offset_bottom = 261.0
+texture_normal = ExtResource("6_rxvj2")
+texture_pressed = ExtResource("6_rxvj2")
+stretch_mode = 0
+script = ExtResource("7_dt1ng")
+reference_path = "res://scenes/Menus/MainMenu.tscn"
+
+[node name="Label" type="Label" parent="TextureButton"]
+layout_mode = 0
+offset_right = 239.0
+offset_bottom = 60.0
+theme = ExtResource("8_hyt0u")
+text = "Exit to menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[connection signal="value_changed" from="MusicControl/GridContainer/MusicSettings/HSlider" to="MusicControl/GridContainer/MusicSettings" method="_on_HSlider_value_changed"]
+[connection signal="value_changed" from="MusicControl/GridContainer/SFXSettings/HSlider" to="MusicControl/GridContainer/SFXSettings" method="_on_HSlider_value_changed"]
+[connection signal="pressed" from="MusicControl/GridContainer/SFXSettings/HBoxContainer/Play" to="MusicControl/GridContainer/SFXSettings" method="_on_Play_pressed"]
+[connection signal="pressed" from="MusicControl/GridContainer/SFXSettings/HBoxContainer/Stop" to="MusicControl/GridContainer/SFXSettings" method="_on_Stop_pressed"]

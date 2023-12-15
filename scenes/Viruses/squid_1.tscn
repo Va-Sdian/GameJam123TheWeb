@@ -1,0 +1,205 @@
+[gd_scene load_steps=23 format=3 uid="uid://cmi56o2bfpwgj"]
+
+[ext_resource type="Texture2D" uid="uid://dmnpkauhhatau" path="res://Sprites/VirusSquid1.png" id="1_0dxdt"]
+[ext_resource type="Script" path="res://scripts/squid_1.gd" id="1_xil5c"]
+[ext_resource type="PackedScene" uid="uid://bgoshe0o5k757" path="res://scenes/Viruses/d_spring_joint.tscn" id="3_2se6m"]
+[ext_resource type="AudioStream" uid="uid://ckipgqtub5v7b" path="res://sounds/Noise 8.ogg" id="4_ylmta"]
+[ext_resource type="AudioStream" uid="uid://c2hf2j010b1bc" path="res://sounds/Square 11.ogg" id="5_8yenx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sl8dn"]
+
+[sub_resource type="Gradient" id="Gradient_2e050"]
+colors = PackedColorArray(0.698039, 0.0705882, 0.0705882, 0.266667, 0.898438, 0.808594, 0.359375, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dbekg"]
+gradient = SubResource("Gradient_2e050")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bmq8o"]
+emission_shape = 1
+emission_sphere_radius = 10.0
+particle_flag_disable_z = true
+direction = Vector3(0, 1, 0)
+spread = 3.44
+flatness = 0.07
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 4.78
+initial_velocity_max = 38.28
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.5
+scale_max = 2.0
+color = Color(0.796875, 0.160156, 0.160156, 1)
+color_ramp = SubResource("GradientTexture1D_dbekg")
+
+[sub_resource type="Gradient" id="Gradient_jusam"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rebqd"]
+gradient = SubResource("Gradient_jusam")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lbjpk"]
+lifetime_randomness = 0.14
+emission_shape = 2
+emission_sphere_radius = 6.39
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 21.05
+initial_velocity_max = 42.11
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_max = 2.0
+color = Color(0.372549, 0.666667, 0.298039, 1)
+color_ramp = SubResource("GradientTexture1D_rebqd")
+
+[sub_resource type="Gradient" id="Gradient_ajh7p"]
+offsets = PackedFloat32Array(0, 0.496296, 1)
+colors = PackedColorArray(0.639216, 0, 0, 1, 0.345695, 0.157949, 0.162239, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lh0jw"]
+gradient = SubResource("Gradient_ajh7p")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5i7iq"]
+emission_shape = 2
+emission_sphere_radius = 5.04
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_max = 30.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_max = 3.0
+color = Color(0.196078, 0.592157, 0.568627, 1)
+color_ramp = SubResource("GradientTexture1D_lh0jw")
+
+[sub_resource type="Gradient" id="Gradient_odkq7"]
+offsets = PackedFloat32Array(0, 0.496296, 1)
+colors = PackedColorArray(0.639216, 0, 0, 1, 0.345695, 0.157949, 0.162239, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_iptvh"]
+gradient = SubResource("Gradient_odkq7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ugpyk"]
+emission_shape = 2
+emission_sphere_radius = 5.04
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_max = 30.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_max = 3.0
+color = Color(0.321569, 0.556863, 0.662745, 1)
+color_ramp = SubResource("GradientTexture1D_iptvh")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vm0f1"]
+radius = 10.4403
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wtupl"]
+radius = 128.035
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_wikv0"]
+streams_count = 1
+random_pitch = 1.52
+random_volume_offset_db = 3.3
+stream_0/stream = ExtResource("4_ylmta")
+stream_0/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_mrnl1"]
+streams_count = 1
+random_pitch = 2.0
+stream_0/stream = ExtResource("5_8yenx")
+stream_0/weight = 1.0
+
+[node name="Squid1" type="RigidBody2D"]
+collision_layer = 8
+collision_mask = 5
+gravity_scale = 0.0
+script = ExtResource("1_xil5c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_sl8dn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+rotation = 1.5708
+texture = ExtResource("1_0dxdt")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Sprite2D"]
+z_index = -1
+process_material = SubResource("ParticleProcessMaterial_bmq8o")
+lifetime = 2.0
+trail_enabled = true
+trail_lifetime = 0.53
+
+[node name="DeathTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="damageParticles" type="GPUParticles2D" parent="."]
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_lbjpk")
+lifetime = 0.5
+one_shot = true
+
+[node name="deathParticles" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_5i7iq")
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.75
+randomness = 0.14
+
+[node name="aliveAfterDeathParticles" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 15
+process_material = SubResource("ParticleProcessMaterial_ugpyk")
+explosiveness = 0.75
+randomness = 0.14
+
+[node name="Check" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="NavigationAgent" type="NavigationAgent2D" parent="."]
+target_desired_distance = 20.0
+navigation_layers = 2
+
+[node name="TargetChangeTimer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[node name="DSpringJoint" parent="." instance=ExtResource("3_2se6m")]
+
+[node name="jointLine" parent="DSpringJoint" index="1"]
+default_color = Color(0.513726, 0.968627, 0.85098, 1)
+
+[node name="Target_detection" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Target_detection"]
+visible = false
+shape = SubResource("CircleShape2D_vm0f1")
+debug_color = Color(0.866667, 0.309804, 0.458824, 0.419608)
+
+[node name="Player_detection" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player_detection"]
+visible = false
+shape = SubResource("CircleShape2D_wtupl")
+debug_color = Color(0.0941176, 0.611765, 0.6, 0.419608)
+
+[node name="reincarnation_sound" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_wikv0")
+
+[node name="death_sound" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_mrnl1")
+volume_db = -5.0
+
+[editable path="DSpringJoint"]

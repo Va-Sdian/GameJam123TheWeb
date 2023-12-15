@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgoshe0o5k757"]
+
+[ext_resource type="Script" path="res://scripts/EnemySpringJoint.gd" id="1_3xe2u"]
+
+[node name="DSpringJoint" type="DampedSpringJoint2D"]
+node_a = NodePath("..")
+bias = 0.555
+disable_collision = false
+damping = 2.0
+script = ExtResource("1_3xe2u")
+
+[node name="ConnectTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="jointLine" type="Line2D" parent="."]
+z_index = -1
+width = 3.0
+default_color = Color(0.968627, 0.87451, 0.360784, 1)

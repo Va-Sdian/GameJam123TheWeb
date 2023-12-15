@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dj27wsbek41mt"
+path="res://.godot/imported/Web surf loop 6.ogg-8d14ca9c238c2879cb95af4e9b9385e0.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/Web surf loop 6.ogg"
+dest_files=["res://.godot/imported/Web surf loop 6.ogg-8d14ca9c238c2879cb95af4e9b9385e0.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

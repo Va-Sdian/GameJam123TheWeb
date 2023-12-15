@@ -1,41 +1,41 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://m2orukkm3kqs"]
 
-[ext_resource path="res://Themes and Fonts/default_theme.tres" type="Theme" id=1]
-[ext_resource path="res://Sprites/barempty.png" type="Texture" id=2]
-[ext_resource path="res://scenes/Misc/Health_NinePatchRect.gd" type="Script" id=3]
+[ext_resource type="Theme" uid="uid://bx2plorkmkbmt" path="res://Themes and Fonts/default_theme.tres" id="1"]
+[ext_resource type="Texture2D" uid="uid://dewgdk7miirxn" path="res://Sprites/barempty.png" id="2"]
+[ext_resource type="Script" path="res://scenes/Misc/Health_NinePatchRect.gd" id="3"]
 
 [node name="HPCounter" type="NinePatchRect" groups=["health"]]
-margin_right = 104.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 40, 40 )
-texture = ExtResource( 2 )
-script = ExtResource( 3 )
+custom_minimum_size = Vector2(40, 40)
+offset_right = 104.0
+offset_bottom = 40.0
+texture = ExtResource("2")
+script = ExtResource("3")
 
 [node name="HP_Label" type="Label" parent="."]
+layout_mode = 0
 anchor_left = 0.971
 anchor_top = 0.5
 anchor_right = 0.971
 anchor_bottom = 0.5
-margin_left = -66.984
-margin_top = -18.0
-margin_right = 3.01599
-margin_bottom = 17.0
-theme = ExtResource( 1 )
+offset_left = -66.984
+offset_top = -18.0
+offset_right = 3.01599
+offset_bottom = 17.0
+theme = ExtResource("1")
 text = "100"
-align = 1
-valign = 1
+horizontal_alignment = 1
 clip_text = true
 
 [node name="HP" type="Label" parent="."]
+layout_mode = 0
 anchor_left = 0.067
 anchor_top = 0.5
 anchor_right = 0.067
 anchor_bottom = 0.5
-margin_left = 0.0319996
-margin_top = -18.0
-margin_right = 40.032
-margin_bottom = 17.0
-theme = ExtResource( 1 )
+offset_left = 0.0319996
+offset_top = -18.0
+offset_right = 40.032
+offset_bottom = 17.0
+theme = ExtResource("1")
 text = "HP"
-valign = 1
 clip_text = true

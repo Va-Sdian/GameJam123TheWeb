@@ -1,0 +1,358 @@
+[gd_scene load_steps=12 format=3 uid="uid://ci1ak1njh03fx"]
+
+[ext_resource type="Texture2D" uid="uid://bdnihj2pkodie" path="res://Sprites/buttons/ButtonBlue13.png" id="1_01x3t"]
+[ext_resource type="Script" path="res://scripts/shop.gd" id="1_lioeq"]
+[ext_resource type="PackedScene" uid="uid://dkg7usnqqnd85" path="res://scenes/TileMap.tscn" id="3_k6as8"]
+[ext_resource type="Texture2D" uid="uid://28dukqphp7im" path="res://Sprites/bordertop2.png" id="5_7bxpg"]
+[ext_resource type="Script" path="res://scripts/Buttons/Next_Level_Button.gd" id="5_m6pe3"]
+[ext_resource type="Theme" uid="uid://bkm8kucwa6aa7" path="res://Themes and Fonts/Buttons_theme.tres" id="6_qe3jx"]
+[ext_resource type="Texture2D" uid="uid://dewgdk7miirxn" path="res://Sprites/barempty.png" id="8_vda5c"]
+[ext_resource type="FontFile" path="res://Themes and Fonts/Buttons_font.tres" id="9_rfc00"]
+
+[sub_resource type="Theme" id="Theme_1gcxj"]
+default_font = ExtResource("9_rfc00")
+default_font_size = 21
+
+[sub_resource type="Theme" id="Theme_lbbto"]
+default_font = ExtResource("9_rfc00")
+default_font_size = 30
+
+[sub_resource type="Theme" id="Theme_yr3ph"]
+default_font = ExtResource("9_rfc00")
+default_font_size = 30
+
+[node name="Shop" type="Node2D"]
+position = Vector2(416, 256)
+script = ExtResource("1_lioeq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.141176, 0.141176, 0.47451)
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = 8.0
+offset_bottom = 112.0
+grow_horizontal = 2
+
+[node name="TextureTop" type="TextureRect" parent="CanvasLayer/MarginContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("5_7bxpg")
+
+[node name="TileMap" parent="." groups=["TileMap"] instance=ExtResource("3_k6as8")]
+modulate = Color(0.286275, 0.701961, 0.286275, 1)
+position = Vector2(-576, -328)
+layer_0/tile_data = PackedInt32Array(917551, 655360, 8, 852015, 65536, 1, 786479, 0, 2, 720943, 262144, 8, 655407, 655360, 9, 589871, 655360, 6, 852014, 0, 0, 786478, 196608, 3, 720942, 524288, 0, 655406, 196608, 7, 589870, 589824, 3, 852013, 262144, 2, 786477, 655360, 0, 720941, 458752, 2, 655405, 65536, 1, 589869, 327680, 3, 852012, 0, 0, 589868, 393216, 5, 786475, 131072, 7, 720939, 327680, 3, 589867, 393216, 5, 852010, 65536, 4, 786474, 327680, 0, 589866, 393216, 5, 720937, 458752, 1, 655401, 65536, 7, 589865, 393216, 5, 786472, 65536, 0, 720936, 0, 3, 655400, 589824, 0, 589864, 393216, 5, 786471, 0, 4, 720935, 720896, 1, 655399, 589824, 0, 589863, 524288, 9, 786470, 720896, 8, 720934, 720896, 9, 655398, 589824, 6, 589862, 720896, 9, 655397, 655360, 1, 589861, 589824, 1, 524326, 393216, 5, 524327, 655360, 8, 720933, 393216, 2, 786469, 655360, 1, 524334, 393216, 5, 983086, 720896, 9, 524335, 327680, 2, 983087, 458752, 2, 852016, 655360, 6, 917552, 655360, 9, 1179685, 524288, 8, 1179684, 0, 4, 1179686, 0, 9, 1310756, 655360, 1, 1835026, 655360, 6, 1835025, 720896, 9, 1769488, 0, 9, 1638416, 655360, 9, 1703951, 655360, 3, 1638415, 327680, 6, 1572880, 655360, 6, 1572879, 327680, 6, 1441808, 655360, 8, 1310736, 262144, 0, 1179665, 196608, 7, 1179666, 524288, 1, 1114130, 458752, 0, 1048593, 589824, 0, 1048595, 655360, 8, 1114131, 196608, 0, 1048596, 655360, 5, 1114132, 0, 9, 1048597, 720896, 8, 1114133, 393216, 1, 1048598, 393216, 6, 983062, 262144, 3, 983063, 393216, 6, 983064, 0, 9, 1048600, 393216, 1, 983065, 393216, 0, 1048601, 720896, 8, 1048603, 524288, 1, 983067, 327680, 3, 1048604, 0, 2, 1310750, 393216, 1, 1245216, 0, 9, 1179682, 589824, 5, 1179687, 393216, 6, 1245221, 393216, 6, 983068, 196608, 8, 983069, 262144, 3, 917530, 458752, 8, 917529, 655360, 3, 1048599, 589824, 1, 1114134, 589824, 1, 1179667, 0, 9, 1179668, 589824, 1, 1245202, 0, 9, 1245201, 524288, 8, 1245203, 327680, 1, 1310737, 655360, 9, 1376273, 393216, 6, 1310738, 327680, 2, 1376274, 327680, 1, 1638417, 327680, 2, 1638421, 655360, 6, 1376279, 0, 9, 1310743, 589824, 5, 1376278, 720896, 9, 1310742, 393216, 2, 1441814, 0, 9, 1441815, 589824, 1, 1441812, 393216, 2, 1507349, 655360, 8, 1507350, 327680, 1, 1507347, 393216, 2, 1572883, 393216, 1, 1835024, 589824, 5, 1900561, 393216, 6, 1900560, 0, 9, 1769486, 655360, 1, 1703950, 720896, 8, 1638414, 524288, 9, 1507341, 720896, 9, 1572876, 393216, 2, 1441805, 589824, 6, 1441804, 655360, 1, 1376269, 655360, 5, 1376268, 393216, 2, 1310734, 0, 9, 1376270, 589824, 5, 1310733, 393216, 1, 1179662, 589824, 9, 1114127, 262144, 0, 1441806, 524288, 8, 1638412, 393216, 1, 983057, 589824, 9, 983055, 393216, 2, 983058, 458752, 2, 983060, 196608, 9, 1310757, 589824, 1, 1245222, 393216, 1, 1245223, 327680, 1, 1179688, 393216, 1, 1114153, 393216, 6, 1114154, 0, 9, 1048612, 589824, 5, 1114145, 393216, 6, 1048607, 131072, 7, 917532, 524288, 9, 983070, 524288, 2, 983074, 524288, 8, 917537, 589824, 5, 917536, 589824, 5, 917535, 589824, 5, 917534, 393216, 2, 917533, 589824, 5, 786456, 589824, 5, 786457, 589824, 5, 851989, 655360, 1, 851988, 589824, 5, 917523, 720896, 8, 851987, 589824, 5, 917522, 393216, 1, 851986, 393216, 2, 917521, 393216, 2, 1835023, 655360, 9, 786468, 655360, 6, 786467, 655360, 1, 720932, 655360, 6, 720931, 393216, 1, 655396, 655360, 6, 655395, 393216, 1, 589860, 655360, 8, 589859, 393216, 1, 524324, 589824, 9, 524323, 393216, 2, 524325, 393216, 5, 458792, 589824, 9, 524328, 327680, 1, 458791, 589824, 5, 458793, 393216, 5, 524329, 327680, 1, 458794, 393216, 5, 524330, 589824, 1, 458795, 393216, 5, 524331, 589824, 1, 458796, 655360, 6, 524332, 327680, 1, 524333, 589824, 9, 458797, 393216, 2, 458798, 327680, 2, 655408, 655360, 5, 720944, 655360, 6, 786480, 655360, 6, 917553, 327680, 2, 983088, 393216, 6, 983089, 327680, 1, 1048624, 589824, 1, 1048623, 393216, 6, 1048622, 589824, 6, 1048621, 393216, 6, 1048620, 589824, 9, 1114156, 655360, 8, 1114155, 589824, 6, 1114157, 589824, 1, 1179692, 393216, 6, 1179691, 720896, 9, 1245228, 589824, 1, 1179693, 393216, 5, 1245229, 589824, 1, 1179694, 524288, 9, 1245230, 393216, 1, 1179695, 327680, 2, 1245231, 589824, 1, 1114158, 655360, 8, 1114159, 327680, 1, 2097204, 0, 9, 2162739, 327680, 1, 2097203, 393216, 6, 2031668, 589824, 9, 2031667, 589824, 3, 2031669, 0, 0, 2097205, 0, 9, 2031670, 0, 0, 2097206, 393216, 6, 1966132, 0, 9, 1966133, 0, 0, 1966131, 524288, 8, 1900595, 393216, 0, 1900596, 0, 0, 1835060, 524288, 2, 1900597, 196608, 8, 1966134, 655360, 6, 1900598, 524288, 8, 2097207, 0, 9, 2097208, 393216, 6, 2097209, 589824, 6, 2031674, 131072, 7, 2031675, 0, 0, 1966139, 0, 0, 1966138, 655360, 3, 1900602, 589824, 6, 1900601, 0, 9, 1900600, 0, 9, 1900599, 0, 9, 2031673, 720896, 9, 2097211, 0, 0, 2097210, 0, 0, 1900594, 720896, 9, 1835059, 262144, 2, 1835061, 655360, 9, 1835062, 589824, 5, 1769524, 589824, 5, 1769525, 327680, 2, 1769523, 589824, 5, 1835058, 720896, 8, 1769522, 589824, 5, 1835057, 393216, 1, 1769521, 393216, 2, 1966130, 720896, 9, 1966129, 393216, 2, 2031666, 720896, 8, 2031665, 655360, 1, 2097202, 327680, 6, 2162738, 655360, 1, 2162742, 327680, 1, 2031671, 589824, 5, 2162741, 393216, 1, 2162744, 589824, 1, 2031672, 589824, 5, 2162743, 655360, 1, 2162746, 655360, 1, 1966137, 327680, 5, 1900603, 589824, 5, 1835065, 589824, 5, 1835066, 589824, 5, 1835064, 589824, 5, 1835063, 589824, 5, 1310751, 589824, 1, 1572885, 327680, 2, 1638420, 393216, 1, 1769490, 327680, 2, 1900559, 655360, 1, 458790, 393216, 2)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(0.691, 1)
+zoom = Vector2(1.37, 1.37)
+
+[node name="Next_Level_Button" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(200, 50)
+offset_left = 208.0
+offset_top = 176.0
+offset_right = 408.0
+offset_bottom = 226.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture_normal = ExtResource("1_01x3t")
+texture_pressed = ExtResource("1_01x3t")
+stretch_mode = 0
+script = ExtResource("5_m6pe3")
+
+[node name="Label" type="Label" parent="Next_Level_Button"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 48.0
+theme = ExtResource("6_qe3jx")
+text = "Next Level"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="PlayerHealthNode" type="Node2D" parent="."]
+position = Vector2(-208, -40)
+
+[node name="Playerhealth" type="TextureButton" parent="PlayerHealthNode"]
+custom_minimum_size = Vector2(200, 50)
+offset_left = -200.0
+offset_top = -88.0
+offset_bottom = -38.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture_normal = ExtResource("1_01x3t")
+texture_pressed = ExtResource("1_01x3t")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="PlayerHealthNode/Playerhealth"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 48.0
+theme = ExtResource("6_qe3jx")
+text = "Player health +1
+-5 score"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerhealthsellButton" type="TextureButton" parent="PlayerHealthNode"]
+custom_minimum_size = Vector2(200, 50)
+offset_left = -200.0
+offset_top = 16.0
+offset_bottom = 66.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture_normal = ExtResource("1_01x3t")
+texture_pressed = ExtResource("1_01x3t")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="PlayerHealthNode/PlayerhealthsellButton"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 48.0
+theme = ExtResource("6_qe3jx")
+text = "Player health -1
++5 score"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Player Health Sprite" type="Sprite2D" parent="PlayerHealthNode"]
+position = Vector2(-100, -160)
+scale = Vector2(6.25, 10)
+texture = ExtResource("8_vda5c")
+
+[node name="Player Health Label" type="Label" parent="PlayerHealthNode"]
+offset_left = -176.0
+offset_top = -208.0
+offset_right = -40.0
+offset_bottom = -152.0
+theme = SubResource("Theme_1gcxj")
+text = "Player health"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerHealthscore" type="Label" parent="PlayerHealthNode"]
+offset_left = -176.0
+offset_top = -176.0
+offset_right = -40.0
+offset_bottom = -120.0
+theme = SubResource("Theme_lbbto")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+metadata/_edit_use_anchors_ = true
+
+[node name="BasehealthNode" type="Node2D" parent="."]
+position = Vector2(-8, -112)
+
+[node name="Basehealth" type="TextureButton" parent="BasehealthNode"]
+custom_minimum_size = Vector2(200, 50)
+offset_left = -184.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture_normal = ExtResource("1_01x3t")
+texture_pressed = ExtResource("1_01x3t")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="BasehealthNode/Basehealth"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 48.0
+theme = ExtResource("6_qe3jx")
+text = "Base health  +1
+-2 score"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+metadata/_edit_use_anchors_ = true
+
+[node name="BasehealthsellButton" type="TextureButton" parent="BasehealthNode"]
+custom_minimum_size = Vector2(200, 50)
+offset_left = -184.0
+offset_top = 88.0
+offset_right = 16.0
+offset_bottom = 138.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture_normal = ExtResource("1_01x3t")
+texture_pressed = ExtResource("1_01x3t")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="BasehealthNode/BasehealthsellButton"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 48.0
+theme = ExtResource("6_qe3jx")
+text = "Base health  -1
++2 score"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Barempty" type="Sprite2D" parent="BasehealthNode"]
+position = Vector2(-92, -88)
+scale = Vector2(6.25, 10)
+texture = ExtResource("8_vda5c")
+
+[node name="Base health Label" type="Label" parent="BasehealthNode"]
+offset_left = -160.0
+offset_top = -136.0
+offset_right = -24.0
+offset_bottom = -80.0
+theme = SubResource("Theme_1gcxj")
+text = "Base health"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Basehealthscore" type="Label" parent="BasehealthNode"]
+offset_left = -160.0
+offset_top = -104.0
+offset_right = -24.0
+offset_bottom = -48.0
+theme = SubResource("Theme_lbbto")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerAttackNode" type="Node2D" parent="."]
+position = Vector2(232, -112)
+
+[node name="PlayerAttackButton" type="TextureButton" parent="PlayerAttackNode"]
+custom_minimum_size = Vector2(200, 50)
+offset_left = -208.0
+offset_top = -16.0
+offset_right = -8.0
+offset_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture_normal = ExtResource("1_01x3t")
+texture_pressed = ExtResource("1_01x3t")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="PlayerAttackNode/PlayerAttackButton"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 48.0
+theme = ExtResource("6_qe3jx")
+text = "Player Attack  +1
+-20 score"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerAttackSellButton" type="TextureButton" parent="PlayerAttackNode"]
+custom_minimum_size = Vector2(200, 50)
+offset_left = -208.0
+offset_top = 88.0
+offset_right = -8.0
+offset_bottom = 138.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture_normal = ExtResource("1_01x3t")
+texture_pressed = ExtResource("1_01x3t")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="PlayerAttackNode/PlayerAttackSellButton"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 48.0
+theme = ExtResource("6_qe3jx")
+text = "Player Attack  -1
++20 score"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Barempty" type="Sprite2D" parent="PlayerAttackNode"]
+position = Vector2(-116, -88)
+scale = Vector2(6.25, 10)
+texture = ExtResource("8_vda5c")
+
+[node name="PlayerAttackLabel" type="Label" parent="PlayerAttackNode"]
+offset_left = -184.0
+offset_top = -136.0
+offset_right = -48.0
+offset_bottom = -80.0
+theme = SubResource("Theme_1gcxj")
+text = "Player Attack"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerAttackscore" type="Label" parent="PlayerAttackNode"]
+offset_left = -184.0
+offset_top = -104.0
+offset_right = -48.0
+offset_bottom = -48.0
+theme = SubResource("Theme_lbbto")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+metadata/_edit_use_anchors_ = true
+
+[node name="ScoreNode" type="Node2D" parent="."]
+position = Vector2(440, -112)
+
+[node name="Barempty" type="Sprite2D" parent="ScoreNode"]
+position = Vector2(-120, -88)
+scale = Vector2(6, 10)
+texture = ExtResource("8_vda5c")
+
+[node name="ScoreLabel" type="Label" parent="ScoreNode"]
+offset_left = -248.0
+offset_top = -120.0
+offset_right = -112.0
+offset_bottom = -64.0
+theme = SubResource("Theme_yr3ph")
+text = "Score"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Score" type="Label" parent="ScoreNode"]
+offset_left = -160.0
+offset_top = -120.0
+offset_right = -24.0
+offset_bottom = -64.0
+theme = SubResource("Theme_lbbto")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+metadata/_edit_use_anchors_ = true

@@ -1,0 +1,253 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://scenes/Viruses/EnemyShootSounds.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Viruses/Enemy 2.gd" type="Script" id=2]
+[ext_resource path="res://scenes/Misc/Weapon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://sounds/new_audiostreamrandompitch.tres" type="AudioStream" id=4]
+[ext_resource path="res://Sprites/RV1-Death.png" type="Texture2D" id=5]
+[ext_resource path="res://Sprites/RV1-Legs.png" type="Texture2D" id=6]
+[ext_resource path="res://Sprites/RV1-Head.png" type="Texture2D" id=7]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 6.0
+height = 10.0
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 1023.04
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 21.0238
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Rv1-Legs:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Rv1-Death:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PackedFloat32Array( 1, -0.25, 0, 0.25, 0 ),
+"times": PackedFloat32Array( 0 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Rv1-Death:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Rv1-Head:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Rv1-Legs:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Walk"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Rv1-Legs:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Rv1-Death:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "death"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Rv1-Death:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PackedFloat32Array( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0 ),
+"times": PackedFloat32Array( 0, 0.2, 0.5, 0.8 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Rv1-Death:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PackedFloat32Array( 0, 1 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PackedFloat32Array( 1 ),
+"transitions": PackedFloat32Array( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Rv1-Head:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Rv1-Legs:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[node name="Enemy 2" type="CharacterBody2D"]
+script = ExtResource( 2 )
+
+[node name="Rv1-Head" type="Sprite2D" parent="."]
+self_modulate = Color( 0.639216, 0, 1, 1 )
+position = Vector2( 4.5, 0 )
+rotation = 1.5708
+texture = ExtResource( 7 )
+
+[node name="Rv1-Legs" type="Sprite2D" parent="."]
+self_modulate = Color( 0.94902, 0.854902, 1, 1 )
+position = Vector2( -0.5, 0 )
+rotation = 1.5708
+z_index = -1
+texture = ExtResource( 6 )
+hframes = 3
+vframes = 2
+
+[node name="EnemyCollision" type="CollisionShape2D" parent="."]
+position = Vector2( -0.5, 0 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="Rv1-Death" type="Sprite2D" parent="."]
+visible = false
+position = Vector2( 0, 1 )
+rotation = 1.5708
+texture = ExtResource( 5 )
+hframes = 2
+vframes = 2
+frame = 1
+
+[node name="DeathTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="BaseDetection" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseDetection"]
+visible = false
+light_mask = 2
+shape = SubResource( 4 )
+
+[node name="AttackCD" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="AttackRadius" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRadius"]
+visible = false
+light_mask = 3
+shape = SubResource( 5 )
+
+[node name="Check" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Weapon" parent="." instance=ExtResource( 3 )]
+position = Vector2( 19, 0 )
+rotation = 3.14159
+
+[node name="EnemyShootSounds" type="Node2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="Noise1" type="AudioStreamPlayer2D" parent="EnemyShootSounds"]
+stream = ExtResource( 4 )
+volume_db = -4.37
+bus = "SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 2 )
+anims/Walk = SubResource( 3 )
+anims/death = SubResource( 6 )
+
+[connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
+[connection signal="body_entered" from="BaseDetection" to="." method="_on_BaseDetection_body_entered"]
+[connection signal="body_shape_entered" from="AttackRadius" to="." method="_on_AttackRadius_body_shape_entered"]

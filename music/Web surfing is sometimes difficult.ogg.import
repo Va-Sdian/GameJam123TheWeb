@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/Web surfing is sometimes difficult.ogg-d03f0dcfbf2eda9330429d7b0911dd71.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dglsskyqhkew1"
+path="res://.godot/imported/Web surfing is sometimes difficult.ogg-d03f0dcfbf2eda9330429d7b0911dd71.oggvorbisstr"
 
 [deps]
 
 source_file="res://music/Web surfing is sometimes difficult.ogg"
-dest_files=[ "res://.import/Web surfing is sometimes difficult.ogg-d03f0dcfbf2eda9330429d7b0911dd71.oggstr" ]
+dest_files=["res://.godot/imported/Web surfing is sometimes difficult.ogg-d03f0dcfbf2eda9330429d7b0911dd71.oggvorbisstr"]
 
 [params]
 
 loop=true
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

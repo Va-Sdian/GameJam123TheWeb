@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://dtuqmlr0tb4tw"]
+
+[ext_resource type="PackedScene" uid="uid://bjatrvsfxbp44" path="res://scenes/Button/GoBackButtonButton.tscn" id="1_1bagr"]
+[ext_resource type="Script" path="res://scripts/tutorial.gd" id="1_aqabf"]
+[ext_resource type="Texture2D" uid="uid://ba87klh86sjdn" path="res://tutorial/Tutorial_page_1.png" id="1_f7bo3"]
+[ext_resource type="Theme" uid="uid://bkm8kucwa6aa7" path="res://Themes and Fonts/Buttons_theme.tres" id="2_4uruv"]
+[ext_resource type="Texture2D" uid="uid://d04ewf60gidv7" path="res://tutorial/Tutorial_page_2.png" id="2_lvfnl"]
+[ext_resource type="Texture2D" uid="uid://crnmwdllywc2h" path="res://tutorial/Tutorial_page_3.png" id="3_3qpus"]
+[ext_resource type="Texture2D" uid="uid://bkuvwqtqqob3j" path="res://tutorial/Tutorial_page_4.png" id="4_y6w6p"]
+[ext_resource type="Texture2D" uid="uid://bdnihj2pkodie" path="res://Sprites/buttons/ButtonBlue13.png" id="7_6el2s"]
+[ext_resource type="AudioStream" uid="uid://cars8vemow13r" path="res://music/Web surf loop 2.ogg" id="9_lyvxd"]
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource("1_aqabf")
+
+[node name="Page_1" type="Sprite2D" parent="."]
+position = Vector2(576.889, 325)
+scale = Vector2(0.598148, 0.598148)
+texture = ExtResource("1_f7bo3")
+
+[node name="Page_2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(576.889, 325)
+scale = Vector2(0.598148, 0.598148)
+texture = ExtResource("2_lvfnl")
+
+[node name="Page_3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(576.889, 325)
+scale = Vector2(0.598148, 0.598148)
+texture = ExtResource("3_3qpus")
+
+[node name="Page_4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(576.889, 325)
+scale = Vector2(0.598148, 0.598148)
+texture = ExtResource("4_y6w6p")
+
+[node name="TextureButton" parent="." instance=ExtResource("1_1bagr")]
+offset_left = 944.0
+offset_top = 568.0
+offset_right = 1136.0
+offset_bottom = 632.0
+theme = ExtResource("2_4uruv")
+
+[node name="NextButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(200, 50)
+offset_left = 24.0
+offset_top = 560.0
+offset_right = 224.0
+offset_bottom = 610.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture_normal = ExtResource("7_6el2s")
+texture_pressed = ExtResource("7_6el2s")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="NextButton"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 48.0
+theme = ExtResource("2_4uruv")
+text = "NEXT"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_lyvxd")
+volume_db = -15.0
+autoplay = true
+bus = &"Music"

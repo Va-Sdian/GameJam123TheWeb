@@ -1,9 +1,9 @@
 extends VBoxContainer
 
 
-export(String) var label
-export(String) var bus_name
-#export(NodePath) var audio_stream_player_path
+@export var label: String
+@export var bus_name: String
+#export var audio_stream_player_path: NodePath
 
 
 var audio_stream_player: AudioStreamPlayer

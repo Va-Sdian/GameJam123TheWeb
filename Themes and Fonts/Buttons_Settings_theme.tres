@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://2pew6h7me6nr"]
+
+[ext_resource type="FontFile" path="res://Themes and Fonts/Buttons_font.tres" id="1_u8xxq"]
+
+[resource]
+default_font = ExtResource("1_u8xxq")
+default_font_size = 22
+HSlider/colors/blue = Color(0.0901961, 0.560784, 0.898039, 1)

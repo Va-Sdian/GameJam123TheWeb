@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/RS 3.ogg-bcdaeeb53f5a2c432454c05a4e80bbe6.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c1k22vgoy2nji"
+path="res://.godot/imported/RS 3.ogg-bcdaeeb53f5a2c432454c05a4e80bbe6.oggvorbisstr"
 
 [deps]
 
 source_file="res://sounds/RS 3.ogg"
-dest_files=[ "res://.import/RS 3.ogg-bcdaeeb53f5a2c432454c05a4e80bbe6.oggstr" ]
+dest_files=["res://.godot/imported/RS 3.ogg-bcdaeeb53f5a2c432454c05a4e80bbe6.oggvorbisstr"]
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

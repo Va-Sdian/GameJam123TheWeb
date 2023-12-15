@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ckipgqtub5v7b"
+path="res://.godot/imported/Noise 8.ogg-0e12f1af12ebb1e5c82f5b8f49304632.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/Noise 8.ogg"
+dest_files=["res://.godot/imported/Noise 8.ogg-0e12f1af12ebb1e5c82f5b8f49304632.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,25 @@
+res://default_env.tres
+res://scenes/Menus/MainMenu.tscn
+res://scenes/Misc/TileSet_forPathfinding.tres
+res://Particles/Bullet_particle_standart.tres
+res://Particles/BulletCapture_particle_standart.tres
+res://Particles/player_damage_particle_process_material.tres
+res://Particles/player_death_particle_process_material.tres
+res://sounds/new_audiostreamrandompitch.tres
+res://Particles/enemy_damage_particle_process_material.tres
+res://Particles/enemy_death_particle_process_material.tres
+res://Particles/BulletCapture_particle_standart2.tres
+res://Themes and Fonts/Headline_theme.tres
+res://Themes and Fonts/basehp_theme.tres
+res://scenes/Menus/leaderboard.tscn
+res://scenes/Menus/you_win.tscn
+res://scenes/Menus/ThirdLevel.tscn
+res://scenes/Menus/Credits.tscn
+res://scenes/Menus/shop.tscn
+res://scenes/Misc/GUI.tscn
+res://scenes/Viruses/Enemy1.2.tscn
+res://scenes/Viruses/squid_1.tscn
+res://scenes/Viruses/squid_master_health.tscn
+res://scenes/Bases/QuarantineBase.tscn
+res://scenes/Menus/GameWindow.tscn
+res://scenes/Player/Player.tscn

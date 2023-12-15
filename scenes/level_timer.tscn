@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdv0l4mm4jeu5"]
+
+[ext_resource type="Texture2D" uid="uid://dewgdk7miirxn" path="res://Sprites/barempty.png" id="1_meqht"]
+[ext_resource type="Script" path="res://scripts/Globals/level_timer.gd" id="2_m16ah"]
+[ext_resource type="Theme" uid="uid://b6ueyty6iicgw" path="res://Themes and Fonts/basehp_theme.tres" id="3_c4h51"]
+
+[node name="Level_Timer" type="NinePatchRect"]
+custom_minimum_size = Vector2(40, 40)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1102.0
+offset_bottom = -608.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_meqht")
+script = ExtResource("2_m16ah")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 70.0
+one_shot = true
+
+[node name="Timer_Numbers" type="Label" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.06
+anchor_top = 0.122
+anchor_right = 0.88
+anchor_bottom = 0.85
+offset_left = -1.0
+offset_top = -1.88
+theme = ExtResource("3_c4h51")
+horizontal_alignment = 1
+vertical_alignment = 1

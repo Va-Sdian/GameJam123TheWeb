@@ -1,227 +1,433 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=25 format=3 uid="uid://k46ib36n4okc"]
 
-[ext_resource path="res://scenes/Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://music/Web surfing is so calm.ogg" type="AudioStream" id=2]
-[ext_resource path="res://scenes/Menus/GameWindow.gd" type="Script" id=3]
-[ext_resource path="res://scenes/Misc/BulletManager.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/TileMap.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/Bases/VirusSpawner.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/Bases/QuarantineBase.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scripts/Globals/Pause.gd" type="Script" id=8]
-[ext_resource path="res://scripts/Buttons/Button.gd" type="Script" id=9]
-[ext_resource path="res://Sprites/buttons/ButtonBlue13.png" type="Texture" id=10]
-[ext_resource path="res://scripts/MusicSettings.gd" type="Script" id=11]
-[ext_resource path="res://music/Web surf loop 3.ogg" type="AudioStream" id=12]
-[ext_resource path="res://sounds/Square 12.ogg" type="AudioStream" id=13]
-[ext_resource path="res://scripts/MusicSettingsWithoutPlayStopButtons.gd" type="Script" id=14]
-[ext_resource path="res://Sprites/WebBGForum.png" type="Texture" id=15]
-[ext_resource path="res://scenes/Misc/GUI.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Themes and Fonts/Buttons_theme.tres" type="Theme" id=17]
-[ext_resource path="res://scenes/Menus/TestHPLabel.gd" type="Script" id=18]
+[ext_resource type="PackedScene" uid="uid://dg5yr6nrym62g" path="res://scenes/Player/Player.tscn" id="1"]
+[ext_resource type="AudioStream" uid="uid://dlsm75jgcmp6d" path="res://music/Web surfing is so calm.ogg" id="2"]
+[ext_resource type="Script" path="res://scenes/Menus/GameWindow.gd" id="3"]
+[ext_resource type="PackedScene" uid="uid://cajww2twpkywq" path="res://scenes/Misc/BulletManager.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://dkg7usnqqnd85" path="res://scenes/TileMap.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://bps7rg4krhfcj" path="res://scenes/Bases/QuarantineBase.tscn" id="7"]
+[ext_resource type="Texture2D" uid="uid://ckqrm80i0aynr" path="res://Sprites/RedSpawner.png" id="7_ujeiy"]
+[ext_resource type="Script" path="res://scripts/Misc/SpawnPoint.gd" id="8_37otm"]
+[ext_resource type="PackedScene" uid="uid://co8678u6tf1db" path="res://scenes/Pop_ups/pause.tscn" id="9_ox151"]
+[ext_resource type="PackedScene" uid="uid://df181mppa8jip" path="res://scenes/Viruses/squid_marker.tscn" id="13_dnon5"]
+[ext_resource type="PackedScene" uid="uid://d4b6lkxo4181q" path="res://scenes/Viruses/squid_master_health.tscn" id="14_llxr3"]
+[ext_resource type="Texture2D" uid="uid://cx1qjbseiw0ax" path="res://Sprites/WebBGForum.png" id="15"]
+[ext_resource type="PackedScene" uid="uid://sbfkothn8sfh" path="res://scenes/Misc/GUI.tscn" id="16"]
+[ext_resource type="Script" path="res://scenes/Menus/TestHPLabel.gd" id="18"]
 
-[node name="GameWindow" type="Node"]
-script = ExtResource( 3 )
+[sub_resource type="CapsuleShape2D" id="1"]
+radius = 16.0
+height = 94.0
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 530, 287 )
+[sub_resource type="Animation" id="Animation_vfgsm"]
+resource_name = "Circling"
+length = 16.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4, 8, 11.9, 16),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(344, 168), Vector2(216, 240), Vector2(344, 312), Vector2(472, 240), Vector2(344, 168)]
+}
+
+[sub_resource type="Animation" id="Animation_usyoi"]
+resource_name = "Circling_little_antiClockwise"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 2, 4, 6, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(648, 248), Vector2(656, 256), Vector2(648, 264), Vector2(640, 256), Vector2(648, 248)]
+}
+
+[sub_resource type="Animation" id="Animation_c5rib"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ar64r"]
+resource_name = "Top-Down"
+length = 60.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 59.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 500)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6, 54.3, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.894118), Color(1, 1, 1, 0.941176), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_il71r"]
+resource_name = "Top-Down_2minutes"
+length = 120.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 120),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 500)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6, 115, 120.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.956863), Color(1, 1, 1, 0.964706), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_72jdx"]
+_data = {
+"Circling": SubResource("Animation_vfgsm"),
+"Circling_little_antiClockwise": SubResource("Animation_usyoi"),
+"RESET": SubResource("Animation_c5rib"),
+"Top-Down": SubResource("Animation_ar64r"),
+"Top-Down_2minutes": SubResource("Animation_il71r")
+}
+
+[sub_resource type="Animation" id="Animation_8gpsx"]
+resource_name = "Slow_collor_change_blye-cyan-purple"
+length = 120.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 30.5, 60, 80, 100, 120.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.0117647, 0.027451, 0.239216, 0.709804), Color(0.0196078, 0.160784, 0.392157, 0.709804), Color(0, 0.156863, 0.172549, 0.709804), Color(0.0313726, 0.12549, 0.156863, 0.709804), Color(0.141176, 0.00392157, 0.0784314, 0.709804), Color(0.0117647, 0.027451, 0.239216, 0.709804)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x8vsr"]
+_data = {
+"Slow_collor_change_blye-cyan-purple": SubResource("Animation_8gpsx")
+}
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_tcuy8"]
+vertices = PackedVector2Array(696, 488, 632, 456, 648, 384, 704, 376, 784, 432, 896, 544, 792, 560, 976, 376, 832, 392, 864, 128, 744, 176, 768, 56, 576, 32, 672, 176, 584, 168, 360, 160, 200, 80, 200, 184, 168, 120)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 0, 4, 7), PackedInt32Array(7, 4, 8), PackedInt32Array(9, 7, 8, 10, 11), PackedInt32Array(12, 11, 10, 13, 14), PackedInt32Array(12, 14, 15, 16), PackedInt32Array(16, 15, 17, 18)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(200, 184, 168, 120, 200, 80, 576, 32, 768, 56, 864, 128, 976, 376, 896, 544, 792, 560, 696, 488, 632, 456, 648, 384, 704, 376, 784, 432, 832, 392, 744, 176, 672, 176, 584, 168, 360, 160)])
+
+[node name="FirstLevel" type="Node"]
+script = ExtResource("3")
+
+[node name="Player" parent="." instance=ExtResource("1")]
+position = Vector2(530, 287)
 
 [node name="LevelMusic" type="AudioStreamPlayer" parent="."]
-pause_mode = 2
-stream = ExtResource( 2 )
-volume_db = -10.0
+process_mode = 3
+stream = ExtResource("2")
+volume_db = -5.0
 autoplay = true
-bus = "Music"
+bus = &"Music"
 
-[node name="BulletManager" parent="." instance=ExtResource( 4 )]
+[node name="BulletManager" parent="." instance=ExtResource("4")]
 
-[node name="TileMap" parent="." instance=ExtResource( 5 )]
-modulate = Color( 0.286275, 0.701961, 0.286275, 1 )
+[node name="TileMap" parent="." groups=["TileMap"] instance=ExtResource("5")]
+modulate = Color(0.286275, 0.701961, 0.286275, 1)
+layer_0/tile_data = PackedInt32Array(917551, 655360, 8, 852015, 65536, 1, 786479, 0, 2, 720943, 262144, 8, 655407, 655360, 9, 589871, 655360, 6, 917550, 589824, 6, 852014, 0, 0, 786478, 196608, 3, 720942, 524288, 0, 655406, 196608, 7, 589870, 589824, 3, 917549, 0, 9, 852013, 262144, 2, 786477, 655360, 0, 720941, 458752, 2, 655405, 65536, 1, 589869, 327680, 3, 917548, 0, 9, 852012, 0, 0, 786476, 0, 4, 720940, 458752, 1, 655404, 131072, 1, 589868, 393216, 5, 917547, 131072, 4, 852011, 0, 0, 786475, 131072, 7, 720939, 327680, 3, 655403, 0, 2, 589867, 393216, 5, 917546, 458752, 3, 852010, 65536, 4, 786474, 327680, 0, 720938, 458752, 0, 655402, 0, 7, 589866, 393216, 5, 917545, 458752, 2, 852009, 65536, 2, 786473, 720896, 3, 720937, 458752, 1, 655401, 65536, 7, 589865, 393216, 5, 917544, 589824, 0, 852008, 65536, 7, 786472, 65536, 0, 720936, 0, 3, 655400, 589824, 0, 589864, 393216, 5, 917543, 196608, 4, 852007, 196608, 7, 786471, 0, 4, 720935, 720896, 1, 655399, 589824, 0, 589863, 524288, 9, 917542, 0, 7, 852006, 196608, 2, 786470, 720896, 8, 720934, 720896, 9, 655398, 589824, 6, 589862, 720896, 9, 655397, 655360, 1, 589861, 589824, 1, 524326, 393216, 5, 524327, 655360, 8, 720933, 393216, 2, 786469, 655360, 1, 917541, 0, 0, 524334, 393216, 5, 983086, 720896, 9, 524335, 327680, 2, 983087, 458752, 2, 852016, 655360, 6, 917552, 655360, 9, 983078, 196608, 8, 983077, 589824, 6, 983079, 131072, 7, 1048614, 720896, 3, 983083, 393216, 6, 983084, 589824, 1, 1048619, 327680, 1, 983082, 0, 9, 983081, 524288, 8, 983080, 196608, 2, 1048616, 720896, 1, 1048615, 196608, 4, 1048613, 720896, 9, 1114149, 655360, 0, 1114148, 196608, 3, 1114150, 0, 0, 1179685, 524288, 8, 1179684, 0, 4, 1179686, 0, 9, 1245220, 0, 9, 1310756, 655360, 1, 1245219, 0, 9, 1179683, 720896, 9, 1703959, 196608, 8, 1769495, 0, 9, 1769494, 655360, 0, 1703958, 720896, 3, 1638422, 393216, 5, 1638423, 393216, 5, 1703957, 655360, 3, 1769493, 720896, 1, 1769492, 720896, 9, 1703956, 327680, 5, 1769491, 589824, 5, 1835028, 131072, 1, 1835027, 131072, 7, 1835026, 262144, 1, 1769490, 393216, 5, 1835025, 720896, 9, 1769489, 589824, 6, 1703953, 393216, 5, 1769488, 0, 9, 1703952, 458752, 8, 1638416, 655360, 9, 1703951, 655360, 3, 1638415, 327680, 6, 1572880, 655360, 6, 1572879, 327680, 6, 1507344, 655360, 6, 1507343, 327680, 6, 1441808, 655360, 8, 1441807, 589824, 6, 1376272, 262144, 1, 1310736, 262144, 0, 1245200, 262144, 2, 1179664, 65536, 4, 1179663, 524288, 3, 1179665, 196608, 7, 1114128, 262144, 3, 1114129, 458752, 9, 1179666, 524288, 1, 1114130, 458752, 0, 1048593, 589824, 0, 1048594, 458752, 0, 1048595, 655360, 8, 1114131, 196608, 0, 1048596, 655360, 5, 1114132, 0, 9, 1048597, 720896, 8, 1114133, 393216, 1, 1048598, 393216, 6, 983062, 262144, 3, 983061, 524288, 2, 983063, 393216, 6, 983064, 0, 9, 1048600, 393216, 1, 983065, 393216, 0, 1048601, 720896, 8, 983066, 65536, 0, 1048602, 0, 9, 1114138, 655360, 1, 1048603, 524288, 1, 983067, 327680, 3, 1114139, 720896, 8, 1048604, 0, 2, 1114140, 0, 9, 1179676, 393216, 1, 1114141, 0, 7, 1048605, 524288, 9, 1179677, 720896, 8, 1114142, 327680, 0, 1179678, 0, 9, 1245214, 393216, 2, 1179679, 655360, 9, 1245215, 720896, 9, 1310751, 589824, 1, 1310750, 393216, 1, 1245216, 0, 9, 1310752, 655360, 1, 1245217, 655360, 3, 1310753, 720896, 8, 1310754, 655360, 6, 1376290, 589824, 1, 1376289, 393216, 1, 1245218, 524288, 8, 1179682, 589824, 5, 1179687, 393216, 6, 1114151, 524288, 8, 1245221, 393216, 6, 1114147, 589824, 6, 1179681, 327680, 1, 1179680, 655360, 5, 983068, 196608, 8, 983069, 262144, 3, 917530, 458752, 8, 917529, 655360, 3, 917528, 589824, 5, 917527, 589824, 5, 917526, 589824, 5, 1048599, 589824, 1, 1114134, 589824, 1, 1179667, 0, 9, 1179668, 589824, 1, 1245202, 0, 9, 1245201, 524288, 8, 1245203, 327680, 1, 1310737, 655360, 9, 1376273, 393216, 6, 1310738, 327680, 2, 1376274, 327680, 1, 1441809, 589824, 1, 1638417, 327680, 2, 1638421, 589824, 6, 1572885, 65536, 0, 1769496, 589824, 6, 1703960, 655360, 8, 1703961, 720896, 8, 1769497, 524288, 1, 1703962, 655360, 6, 1769498, 524288, 9, 1638426, 720896, 9, 1638427, 0, 9, 1572890, 393216, 2, 1572891, 720896, 9, 1572892, 655360, 9, 1638428, 655360, 8, 1572893, 327680, 2, 1638429, 589824, 1, 1507356, 655360, 6, 1507355, 589824, 6, 1441819, 655360, 6, 1507354, 393216, 1, 1441818, 327680, 6, 1376283, 655360, 6, 1376282, 0, 9, 1310746, 589824, 5, 1310747, 327680, 2, 1376281, 0, 9, 1310745, 589824, 5, 1376280, 0, 9, 1310744, 589824, 5, 1376279, 0, 9, 1310743, 589824, 5, 1376278, 720896, 9, 1310742, 393216, 2, 1376277, 393216, 2, 1441814, 0, 9, 1441813, 720896, 9, 1441815, 589824, 1, 1441812, 393216, 2, 1507349, 655360, 8, 1507348, 720896, 9, 1507350, 327680, 1, 1572884, 720896, 8, 1507347, 393216, 2, 1572883, 393216, 1, 1572886, 327680, 1, 1638420, 393216, 1, 1638424, 393216, 5, 1638425, 393216, 5, 1769499, 720896, 9, 1835034, 655360, 8, 1835030, 524288, 9, 1835029, 589824, 3, 1835031, 589824, 5, 1835024, 589824, 5, 1900561, 524288, 2, 1900560, 589824, 6, 1769487, 0, 9, 1769486, 655360, 1, 1703950, 720896, 8, 1638414, 524288, 9, 1703949, 393216, 1, 1638413, 589824, 8, 1572878, 655360, 6, 1572877, 720896, 9, 1507341, 720896, 9, 1572876, 393216, 2, 1441805, 589824, 6, 1441804, 655360, 1, 1376269, 655360, 5, 1376268, 393216, 2, 1310734, 0, 9, 1376270, 589824, 5, 1245198, 196608, 7, 1310733, 393216, 1, 1245197, 393216, 1, 1179662, 589824, 9, 1114126, 393216, 1, 1114127, 262144, 0, 1376271, 720896, 9, 1441806, 524288, 8, 1507342, 655360, 6, 1638412, 393216, 1, 1179661, 393216, 2, 1048592, 262144, 8, 1048591, 589824, 9, 1048590, 393216, 2, 983057, 589824, 9, 983055, 393216, 2, 983056, 589824, 5, 983058, 458752, 2, 983059, 0, 4, 983060, 196608, 9, 917525, 655360, 9, 1310757, 589824, 1, 1245222, 393216, 1, 1245223, 327680, 1, 1179688, 393216, 1, 1114152, 0, 9, 1114153, 393216, 6, 1048617, 655360, 9, 1179689, 327680, 1, 1114154, 0, 9, 1048618, 655360, 1, 1048612, 589824, 5, 1048611, 589824, 5, 1114146, 0, 9, 1048610, 589824, 5, 1114145, 393216, 6, 1048609, 655360, 9, 1114144, 262144, 8, 1048608, 196608, 7, 1114143, 0, 7, 1048607, 131072, 7, 1048606, 589824, 5, 851993, 589824, 6, 917531, 196608, 3, 917532, 524288, 9, 983070, 524288, 2, 983071, 0, 4, 983076, 0, 9, 917540, 589824, 5, 983075, 0, 9, 917539, 589824, 5, 983074, 524288, 8, 917538, 589824, 5, 983073, 196608, 8, 917537, 589824, 5, 983072, 196608, 8, 917536, 589824, 5, 917535, 589824, 5, 917534, 393216, 2, 917533, 589824, 5, 851995, 589824, 5, 851996, 327680, 2, 851994, 589824, 5, 851992, 0, 9, 786456, 589824, 5, 786457, 589824, 5, 851991, 0, 9, 786455, 589824, 5, 851990, 0, 9, 786454, 589824, 5, 851989, 655360, 1, 786453, 393216, 2, 917524, 65536, 1, 851988, 589824, 5, 917523, 720896, 8, 851987, 589824, 5, 917522, 393216, 1, 851986, 393216, 2, 917521, 393216, 2, 1310735, 589824, 6, 1245199, 196608, 7, 1900566, 196608, 9, 1900565, 327680, 3, 1900567, 458752, 1, 1900564, 524288, 0, 1900563, 196608, 1, 1900562, 720896, 3, 1900559, 0, 9, 1835023, 655360, 9, 1900558, 0, 9, 1835022, 589824, 9, 1900557, 655360, 1, 1835021, 393216, 2, 1900568, 65536, 7, 1835032, 720896, 9, 1900569, 65536, 4, 1835033, 65536, 3, 1900570, 0, 9, 1835035, 720896, 8, 1835036, 589824, 1, 1769500, 655360, 6, 1703964, 655360, 6, 1703963, 327680, 5, 1900571, 0, 9, 1900572, 589824, 1, 1966105, 393216, 6, 1966106, 589824, 1, 2031641, 589824, 1, 1966104, 0, 9, 1966103, 327680, 3, 1966102, 131072, 3, 1966101, 458752, 1, 1966100, 589824, 6, 1966099, 0, 9, 1966098, 0, 9, 1966097, 262144, 9, 1966096, 720896, 9, 1966095, 393216, 2, 2031633, 393216, 6, 2031632, 589824, 8, 2097169, 589824, 1, 2097168, 393216, 1, 2031631, 655360, 1, 2031637, 0, 9, 2031636, 327680, 6, 2031638, 0, 9, 2097174, 393216, 1, 2031639, 393216, 6, 2097175, 589824, 1, 852005, 589824, 9, 786468, 655360, 6, 852004, 327680, 1, 852003, 655360, 1, 786467, 655360, 1, 720932, 655360, 6, 720931, 393216, 1, 655396, 655360, 6, 655395, 393216, 1, 589860, 655360, 8, 589859, 393216, 1, 524324, 589824, 9, 524323, 393216, 2, 524325, 393216, 5, 458788, 393216, 2, 458792, 655360, 5, 524328, 327680, 1, 458791, 589824, 5, 458793, 393216, 5, 524329, 327680, 1, 458794, 393216, 5, 524330, 589824, 1, 458795, 393216, 5, 524331, 589824, 1, 458796, 655360, 6, 524332, 327680, 1, 524333, 589824, 9, 458797, 393216, 2, 458798, 327680, 2, 655408, 655360, 5, 720944, 655360, 6, 786480, 655360, 6, 917553, 327680, 2, 983088, 393216, 6, 983089, 327680, 1, 1048624, 589824, 1, 1048623, 393216, 6, 1048622, 589824, 6, 1048621, 393216, 6, 983085, 589824, 5, 1048620, 589824, 9, 1114156, 655360, 8, 1114155, 589824, 6, 1114157, 589824, 1, 1179692, 393216, 6, 1179691, 720896, 9, 1245227, 393216, 1, 1245228, 589824, 1, 1179693, 393216, 5, 1245229, 589824, 1, 1179694, 524288, 9, 1245230, 393216, 1, 1179695, 327680, 2, 1245231, 589824, 1, 1114158, 655360, 8, 1114159, 327680, 1, 1703980, 655360, 6, 1769516, 589824, 1, 1703979, 0, 9, 1638443, 589824, 5, 1638444, 327680, 2, 1703978, 720896, 9, 1638442, 393216, 2, 1703977, 589824, 5, 1769514, 393216, 6, 1769513, 720896, 8, 1769515, 589824, 1, 1835050, 589824, 1, 1835049, 393216, 1, 1769512, 655360, 1, 1703976, 393216, 2, 524304, 655360, 5, 589840, 589824, 1, 589839, 655360, 8, 524303, 589824, 5, 655375, 589824, 1, 589838, 0, 9, 524302, 589824, 5, 589837, 0, 9, 524301, 589824, 5, 589836, 0, 9, 524300, 524288, 9, 589835, 655360, 1, 524299, 655360, 1, 458764, 589824, 9, 458763, 393216, 2, 458765, 655360, 8, 393228, 393216, 2, 393229, 589824, 9, 393230, 655360, 6, 458766, 589824, 1, 327693, 393216, 2, 327694, 327680, 2, 2097204, 0, 9, 2162740, 393216, 1, 2162739, 393216, 1, 2097203, 655360, 1, 2031668, 589824, 9, 2031667, 393216, 2, 2031669, 393216, 5, 2097205, 393216, 6, 2031670, 327680, 2, 2097206, 589824, 1, 1966132, 393216, 2, 1966133, 327680, 2, 2162741, 327680, 1, 327714, 655360, 8, 393250, 589824, 1, 393249, 655360, 1, 327713, 393216, 1, 262178, 589824, 9, 262177, 393216, 2, 262179, 262144, 0, 327715, 589824, 1, 262180, 131072, 4, 327716, 393216, 1, 196642, 393216, 2, 262181, 524288, 9, 327717, 393216, 1, 262182, 327680, 2, 327718, 327680, 1, 196645, 655360, 6, 196644, 458752, 9, 131108, 589824, 5, 131109, 327680, 2, 196643, 589824, 9, 131107, 393216, 2)
 
-[node name="StaticBody2D" parent="." instance=ExtResource( 7 )]
-position = Vector2( 386, 380 )
+[node name="Base" parent="." instance=ExtResource("7")]
+position = Vector2(386, 380)
 
-[node name="StaticBody2D2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 696, 194 )
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(696, 194)
+collision_layer = 4
+collision_mask = 0
+
+[node name="RedSpawner" type="Sprite2D" parent="StaticBody2D2"]
+texture = ExtResource("7_ujeiy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+rotation = 1.5708
+shape = SubResource("1")
+
+[node name="SpawnPoint" type="Marker2D" parent="StaticBody2D2"]
+position = Vector2(-8, 30)
+script = ExtResource("8_37otm")
+
+[node name="SpawnCD" type="Timer" parent="StaticBody2D2/SpawnPoint"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 100
 
-[node name="GUI" parent="CanvasLayer" instance=ExtResource( 16 )]
+[node name="GUI" parent="CanvasLayer" instance=ExtResource("16")]
 
-[node name="Pause" type="Control" parent="CanvasLayer"]
-pause_mode = 2
-visible = false
-margin_left = 280.0
-margin_top = 144.0
-margin_right = 784.0
-margin_bottom = 432.0
-script = ExtResource( 8 )
-
-[node name="BlackOverlay" type="ColorRect" parent="CanvasLayer/Pause"]
-margin_left = 8.0
-margin_top = 16.0
-margin_right = 488.0
-margin_bottom = 280.0
-color = Color( 0, 0, 0, 0.733333 )
-
-[node name="MusicControl" type="Control" parent="CanvasLayer/Pause"]
-pause_mode = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Pause/MusicControl"]
-margin_left = 24.0
-margin_top = 80.0
-margin_right = 472.0
-margin_bottom = 144.0
-
-[node name="MusicSettings" type="VBoxContainer" parent="CanvasLayer/Pause/MusicControl/GridContainer"]
-margin_right = 448.0
-margin_bottom = 34.0
-size_flags_horizontal = 3
-script = ExtResource( 14 )
-label = "Music"
-bus_name = "Music"
-
-[node name="Label" type="Label" parent="CanvasLayer/Pause/MusicControl/GridContainer/MusicSettings"]
-margin_right = 448.0
-margin_bottom = 14.0
-text = "Music Volume"
-
-[node name="HSlider" type="HSlider" parent="CanvasLayer/Pause/MusicControl/GridContainer/MusicSettings"]
-margin_top = 18.0
-margin_right = 448.0
-margin_bottom = 34.0
-min_value = -24.0
-max_value = 0.0
-
-[node name="SFXSettings" type="VBoxContainer" parent="CanvasLayer/Pause/MusicControl/GridContainer"]
-margin_top = 38.0
-margin_right = 448.0
-margin_bottom = 96.0
-size_flags_horizontal = 3
-script = ExtResource( 11 )
-label = "SFX"
-bus_name = "SFX"
-audio_stream_player_path = NodePath("../../SFXPlayer")
-
-[node name="Label" type="Label" parent="CanvasLayer/Pause/MusicControl/GridContainer/SFXSettings"]
-margin_right = 448.0
-margin_bottom = 14.0
-text = "SFX Volume"
-
-[node name="HSlider" type="HSlider" parent="CanvasLayer/Pause/MusicControl/GridContainer/SFXSettings"]
-margin_top = 18.0
-margin_right = 448.0
-margin_bottom = 34.0
-min_value = -24.0
-max_value = 0.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Pause/MusicControl/GridContainer/SFXSettings"]
-margin_top = 38.0
-margin_right = 448.0
-margin_bottom = 58.0
-
-[node name="Play" type="Button" parent="CanvasLayer/Pause/MusicControl/GridContainer/SFXSettings/HBoxContainer"]
-margin_right = 38.0
-margin_bottom = 20.0
-text = "Play"
-
-[node name="Stop" type="Button" parent="CanvasLayer/Pause/MusicControl/GridContainer/SFXSettings/HBoxContainer"]
-margin_left = 42.0
-margin_right = 82.0
-margin_bottom = 20.0
-text = "Stop"
-
-[node name="MusicPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Pause/MusicControl"]
-stream = ExtResource( 12 )
-bus = "Music"
-
-[node name="SFXPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Pause/MusicControl"]
-stream = ExtResource( 13 )
-bus = "SFX"
-
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Pause"]
-pause_mode = 2
-margin_left = 120.0
-margin_top = 200.0
-margin_right = 361.0
-margin_bottom = 261.0
-texture_normal = ExtResource( 10 )
-texture_pressed = ExtResource( 10 )
-expand = true
-script = ExtResource( 9 )
-reference_path = "res://scenes/Menus/MainMenu.tscn"
-
-[node name="Label" type="Label" parent="CanvasLayer/Pause/TextureButton"]
-margin_right = 239.0
-margin_bottom = 60.0
-theme = ExtResource( 17 )
-text = "Exit to menu"
-align = 1
-valign = 1
-clip_text = true
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("9_ox151")]
 
 [node name="Background" type="Node2D" parent="."]
 
-[node name="WebBgForum" type="Sprite" parent="Background"]
-position = Vector2( 364, 164.25 )
-scale = Vector2( 1.5, 1.5 )
-z_index = -10
-texture = ExtResource( 15 )
+[node name="Static" type="Node2D" parent="Background"]
+position = Vector2(212.08, 266.026)
+scale = Vector2(1.5, 1.5)
 
-[node name="WebBgForum2" type="Sprite" parent="Background"]
-position = Vector2( 364, 248.25 )
-scale = Vector2( 1.5, 1.5 )
+[node name="WebBgForum" type="Sprite2D" parent="Background/Static"]
+visible = false
 z_index = -10
-texture = ExtResource( 15 )
+position = Vector2(344, 168)
+texture = ExtResource("15")
 
-[node name="WebBgForum3" type="Sprite" parent="Background"]
-position = Vector2( 363, 332.25 )
-scale = Vector2( 1.5, 1.5 )
-z_index = -10
-texture = ExtResource( 15 )
+[node name="Animated" type="Node2D" parent="Background"]
+position = Vector2(212.08, 266.026)
+scale = Vector2(1.5, 1.5)
 
-[node name="WebBgForum4" type="Sprite" parent="Background"]
-position = Vector2( 714.5, 164.5 )
-scale = Vector2( 1.5, 1.5 )
-z_index = -10
-texture = ExtResource( 15 )
+[node name="Top-Down" type="Node2D" parent="Background/Animated"]
 
-[node name="WebBgForum5" type="Sprite" parent="Background"]
-position = Vector2( 714.5, 248.5 )
-scale = Vector2( 1.5, 1.5 )
+[node name="WebBgForum" type="Sprite2D" parent="Background/Animated/Top-Down"]
 z_index = -10
-texture = ExtResource( 15 )
+position = Vector2(-29.3866, -278.684)
+texture = ExtResource("15")
 
-[node name="WebBgForum6" type="Sprite" parent="Background"]
-position = Vector2( 713.5, 332.5 )
-scale = Vector2( 1.5, 1.5 )
-z_index = -10
-texture = ExtResource( 15 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/Animated/Top-Down/WebBgForum"]
+autoplay = "Top-Down_2minutes"
+libraries = {
+"": SubResource("AnimationLibrary_72jdx")
+}
 
-[node name="WebBgForum7" type="Sprite" parent="Background"]
-position = Vector2( 362.5, 416.5 )
-scale = Vector2( 1.5, 1.5 )
+[node name="WebBgForum11" type="Sprite2D" parent="Background/Animated/Top-Down"]
+self_modulate = Color(1, 1, 1, 0)
 z_index = -10
-texture = ExtResource( 15 )
+position = Vector2(279.947, -454.684)
+texture = ExtResource("15")
 
-[node name="WebBgForum8" type="Sprite" parent="Background"]
-position = Vector2( 713, 416.75 )
-scale = Vector2( 1.5, 1.5 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/Animated/Top-Down/WebBgForum11"]
+autoplay = "Top-Down_2minutes"
+libraries = {
+"": SubResource("AnimationLibrary_72jdx")
+}
+
+[node name="WebBgForum12" type="Sprite2D" parent="Background/Animated/Top-Down"]
 z_index = -10
-texture = ExtResource( 15 )
+position = Vector2(546.613, -588.017)
+texture = ExtResource("15")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/Animated/Top-Down/WebBgForum12"]
+autoplay = "Top-Down_2minutes"
+libraries = {
+"": SubResource("AnimationLibrary_72jdx")
+}
+
+[node name="WebBgForum2" type="Sprite2D" parent="Background/Animated/Top-Down"]
+z_index = -10
+position = Vector2(253.28, -252.017)
+texture = ExtResource("15")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/Animated/Top-Down/WebBgForum2"]
+autoplay = "Top-Down"
+libraries = {
+"": SubResource("AnimationLibrary_72jdx")
+}
+
+[node name="WebBgForum3" type="Sprite2D" parent="Background/Animated/Top-Down"]
+z_index = -10
+position = Vector2(-18.7199, -220.017)
+texture = ExtResource("15")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/Animated/Top-Down/WebBgForum3"]
+autoplay = "Top-Down"
+libraries = {
+"": SubResource("AnimationLibrary_72jdx")
+}
+
+[node name="WebBgForum4" type="Sprite2D" parent="Background/Animated/Top-Down"]
+z_index = -10
+position = Vector2(23.9468, -342.684)
+texture = ExtResource("15")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/Animated/Top-Down/WebBgForum4"]
+autoplay = "Top-Down"
+libraries = {
+"": SubResource("AnimationLibrary_72jdx")
+}
+
+[node name="WebBgForum5" type="Sprite2D" parent="Background/Animated/Top-Down"]
+z_index = -10
+position = Vector2(343.947, -385.35)
+texture = ExtResource("15")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/Animated/Top-Down/WebBgForum5"]
+autoplay = "Top-Down"
+libraries = {
+"": SubResource("AnimationLibrary_72jdx")
+}
+
+[node name="WebBgForum6" type="Sprite2D" parent="Background/Animated/Top-Down"]
+z_index = -10
+position = Vector2(55.9468, -433.35)
+texture = ExtResource("15")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/Animated/Top-Down/WebBgForum6"]
+autoplay = "Top-Down"
+libraries = {
+"": SubResource("AnimationLibrary_72jdx")
+}
+
+[node name="WebBgForum7" type="Sprite2D" parent="Background/Animated/Top-Down"]
+z_index = -10
+position = Vector2(546.613, -454.684)
+texture = ExtResource("15")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/Animated/Top-Down/WebBgForum7"]
+autoplay = "Top-Down"
+libraries = {
+"": SubResource("AnimationLibrary_72jdx")
+}
+
+[node name="WebBgForum8" type="Sprite2D" parent="Background/Animated/Top-Down"]
+z_index = -10
+position = Vector2(2.61343, -545.35)
+texture = ExtResource("15")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/Animated/Top-Down/WebBgForum8"]
+autoplay = "Top-Down"
+libraries = {
+"": SubResource("AnimationLibrary_72jdx")
+}
+
+[node name="WebBgForum9" type="Sprite2D" parent="Background/Animated/Top-Down"]
+z_index = -10
+position = Vector2(317.28, -540.017)
+texture = ExtResource("15")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/Animated/Top-Down/WebBgForum9"]
+autoplay = "Top-Down"
+libraries = {
+"": SubResource("AnimationLibrary_72jdx")
+}
+
+[node name="WebBgForum10" type="Sprite2D" parent="Background/Animated/Top-Down"]
+z_index = -10
+position = Vector2(525.28, -300.017)
+texture = ExtResource("15")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/Animated/Top-Down/WebBgForum10"]
+autoplay = "Top-Down"
+libraries = {
+"": SubResource("AnimationLibrary_72jdx")
+}
+
+[node name="Circle" type="Node2D" parent="Background/Animated"]
+
+[node name="WebBgForum" type="Sprite2D" parent="Background/Animated/Circle"]
+visible = false
+z_index = -10
+position = Vector2(-34.7199, -204.017)
+texture = ExtResource("15")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/Animated/Circle/WebBgForum"]
+autoplay = "Circling"
+libraries = {
+"": SubResource("AnimationLibrary_72jdx")
+}
+
+[node name="WebBgForum2" type="Sprite2D" parent="Background/Animated/Circle"]
+visible = false
+modulate = Color(0.396078, 0.592157, 1, 1)
+z_index = -10
+position = Vector2(290.613, -12.0171)
+texture = ExtResource("15")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/Animated/Circle/WebBgForum2"]
+autoplay = "Circling_little_antiClockwise"
+libraries = {
+"": SubResource("AnimationLibrary_72jdx")
+}
 
 [node name="TestHPLabel" type="Label" parent="."]
 visible = false
-margin_left = 448.0
-margin_top = 248.0
-margin_right = 544.0
-margin_bottom = 272.0
+offset_left = 448.0
+offset_top = 248.0
+offset_right = 544.0
+offset_bottom = 272.0
 text = "Hello there"
-script = ExtResource( 18 )
+script = ExtResource("18")
 
-[connection signal="value_changed" from="CanvasLayer/Pause/MusicControl/GridContainer/MusicSettings/HSlider" to="CanvasLayer/Pause/MusicControl/GridContainer/MusicSettings" method="_on_HSlider_value_changed"]
-[connection signal="value_changed" from="CanvasLayer/Pause/MusicControl/GridContainer/SFXSettings/HSlider" to="CanvasLayer/Pause/MusicControl/GridContainer/SFXSettings" method="_on_HSlider_value_changed"]
-[connection signal="pressed" from="CanvasLayer/Pause/MusicControl/GridContainer/SFXSettings/HBoxContainer/Play" to="CanvasLayer/Pause/MusicControl/GridContainer/SFXSettings" method="_on_Play_pressed"]
-[connection signal="pressed" from="CanvasLayer/Pause/MusicControl/GridContainer/SFXSettings/HBoxContainer/Stop" to="CanvasLayer/Pause/MusicControl/GridContainer/SFXSettings" method="_on_Stop_pressed"]
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(0.0117647, 0.027451, 0.239216, 0.709804)
+z_index = -12
+offset_left = -1184.0
+offset_top = -624.0
+offset_right = 2608.0
+offset_bottom = 1536.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+libraries = {
+"": SubResource("AnimationLibrary_x8vsr")
+}
+
+[node name="SquidMarker1" parent="." instance=ExtResource("13_dnon5")]
+position = Vector2(208, 128)
+
+[node name="SquidMarker2" parent="." instance=ExtResource("13_dnon5")]
+position = Vector2(576, 72)
+
+[node name="SquidMarker3" parent="." instance=ExtResource("13_dnon5")]
+position = Vector2(720, 144)
+
+[node name="SquidMarker4" parent="." instance=ExtResource("13_dnon5")]
+position = Vector2(840, 520)
+
+[node name="SquidMarker5" parent="." instance=ExtResource("13_dnon5")]
+position = Vector2(680, 432)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_tcuy8")
+navigation_layers = 2
+
+[node name="Squid1" parent="." instance=ExtResource("14_llxr3")]
+position = Vector2(736, 160)
+
+[connection signal="timeout" from="StaticBody2D2/SpawnPoint/SpawnCD" to="StaticBody2D2/SpawnPoint" method="_on_SpawnCD_timeout" flags=18]

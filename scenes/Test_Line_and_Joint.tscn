@@ -1,0 +1,81 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/Line2DTest on KinBody.gd" type="Script" id=2]
+[ext_resource path="res://icon.png" type="Texture2D" id=3]
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 25.0799
+
+[sub_resource type="RectangleShape2D" id=2]
+size = Vector2( 31.5, 29.5 )
+
+[node name="Test" type="Node"]
+
+[node name="test" type="StaticBody2D" parent="."]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="test"]
+position = Vector2( 445, 343 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="test/RigidBody2D"]
+shape = SubResource( 3 )
+
+[node name="KinBod1" type="CharacterBody2D" parent="test"]
+position = Vector2( 227, 147 )
+input_pickable = true
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="test/KinBod1"]
+position = Vector2( 1.5, 1.5 )
+shape = SubResource( 2 )
+
+[node name="Line2D" type="Line2D" parent="test/KinBod1"]
+position = Vector2( 1, 1 )
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="test/KinBod1"]
+position = Vector2( 1, 1 )
+node_a = NodePath("..")
+node_b = NodePath("../../KinBod2")
+disable_collision = false
+length = 100.0
+
+[node name="Sprite2D" type="Sprite2D" parent="test/KinBod1"]
+position = Vector2( 1, 1 )
+z_index = -1
+texture = ExtResource( 3 )
+
+[node name="KinBod2" type="CharacterBody2D" parent="test"]
+position = Vector2( 444, 143 )
+input_pickable = true
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="test/KinBod2"]
+position = Vector2( 1.5, 1.5 )
+shape = SubResource( 2 )
+
+[node name="Line2D" type="Line2D" parent="test/KinBod2"]
+position = Vector2( 1, 1 )
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="test/KinBod2"]
+position = Vector2( 1, 1 )
+node_a = NodePath("..")
+node_b = NodePath("../../RigidBody2D")
+length = 200.0
+
+[node name="Sprite2D" type="Sprite2D" parent="test/KinBod2"]
+position = Vector2( 1, 1 )
+z_index = -1
+texture = ExtResource( 3 )
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="."]
+visible = false
+position = Vector2( 228, 130 )
+rotation = -1.08036
+node_a = NodePath("../test")
+
+[node name="Line2D" type="Line2D" parent="."]
+visible = false
+points = PackedVector2Array( 0, 0, 477, 255, 377, 235 )
+width = 5.0
+
+[connection signal="input_event" from="test/KinBod1" to="test/KinBod1" method="_on_KinBod1_input_event"]
+[connection signal="input_event" from="test/KinBod2" to="test/KinBod2" method="_on_KinBod1_input_event"]

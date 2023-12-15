@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/Web surf loop 2.ogg-def4bdff34d7d97ee19e385abf41037f.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cars8vemow13r"
+path="res://.godot/imported/Web surf loop 2.ogg-def4bdff34d7d97ee19e385abf41037f.oggvorbisstr"
 
 [deps]
 
 source_file="res://music/Web surf loop 2.ogg"
-dest_files=[ "res://.import/Web surf loop 2.ogg-def4bdff34d7d97ee19e385abf41037f.oggstr" ]
+dest_files=["res://.godot/imported/Web surf loop 2.ogg-def4bdff34d7d97ee19e385abf41037f.oggvorbisstr"]
 
 [params]
 
 loop=true
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

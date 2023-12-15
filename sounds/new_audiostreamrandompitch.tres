@@ -1,7 +1,9 @@
-[gd_resource type="AudioStreamRandomPitch" load_steps=2 format=2]
+[gd_resource type="AudioStreamRandomizer" load_steps=2 format=3 uid="uid://bxdxbwk5kyuyx"]
 
-[ext_resource path="res://sounds/Noise 1.ogg" type="AudioStream" id=1]
+[ext_resource type="AudioStream" uid="uid://cj2lovuxg7j2b" path="res://sounds/Noise 1.ogg" id="1"]
 
 [resource]
-audio_stream = ExtResource( 1 )
+streams_count = 1
 random_pitch = 3.85
+stream_0/stream = ExtResource("1")
+stream_0/weight = 1.0

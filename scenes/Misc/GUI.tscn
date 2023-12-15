@@ -1,288 +1,457 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=29 format=3 uid="uid://sbfkothn8sfh"]
 
-[ext_resource path="res://Sprites/border.png" type="Texture" id=1]
-[ext_resource path="res://scenes/Misc/HPBarTextureProgress.gd" type="Script" id=2]
-[ext_resource path="res://Sprites/hpbarempty.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/hpbarfull.png" type="Texture" id=4]
-[ext_resource path="res://scenes/Misc/HPCounter.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Themes and Fonts/Headline_theme.tres" type="Theme" id=6]
-[ext_resource path="res://Sprites/buttons/ButtonBlue13.png" type="Texture" id=7]
-[ext_resource path="res://scripts/Buttons/Button.gd" type="Script" id=8]
-[ext_resource path="res://Themes and Fonts/Buttons_theme.tres" type="Theme" id=9]
-[ext_resource path="res://scripts/Buttons/ReloadSceneButton.gd" type="Script" id=10]
-[ext_resource path="res://scenes/Misc/GUI.gd" type="Script" id=11]
-[ext_resource path="res://Sprites/button3.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/borderbottomt.png" type="Texture" id=13]
-[ext_resource path="res://Sprites/bordertop2.png" type="Texture" id=14]
-[ext_resource path="res://Sprites/borderleft.png" type="Texture" id=15]
-[ext_resource path="res://Sprites/borderright.png" type="Texture" id=16]
-[ext_resource path="res://Sprites/button2.png" type="Texture" id=17]
-[ext_resource path="res://Sprites/button1.png" type="Texture" id=18]
-[ext_resource path="res://music/Web surf loop 2.ogg" type="AudioStream" id=19]
-[ext_resource path="res://sounds/Square 10.ogg" type="AudioStream" id=20]
-[ext_resource path="res://scenes/Misc/HPBaseCounter.tscn" type="PackedScene" id=21]
-[ext_resource path="res://scenes/Misc/BaseHPTextureProgress.gd" type="Script" id=22]
+[ext_resource type="Texture2D" uid="uid://ba8v5ubyoqdlk" path="res://Sprites/border.png" id="1"]
+[ext_resource type="Script" path="res://scenes/Misc/HPBarTextureProgress.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://m2orukkm3kqs" path="res://scenes/Misc/HPCounter.tscn" id="5"]
+[ext_resource type="Theme" uid="uid://yaj7th1qj6ss" path="res://Themes and Fonts/Headline_theme.tres" id="6"]
+[ext_resource type="Texture2D" uid="uid://bdnihj2pkodie" path="res://Sprites/buttons/ButtonBlue13.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://1j316o65nrol" path="res://Sprites/hpbarxp_empty.png" id="7_48j7j"]
+[ext_resource type="Script" path="res://scripts/Buttons/Button.gd" id="8"]
+[ext_resource type="Texture2D" uid="uid://cq0p5s0833fj1" path="res://Sprites/hpbarxp_full.png" id="8_xsman"]
+[ext_resource type="Theme" uid="uid://bkm8kucwa6aa7" path="res://Themes and Fonts/Buttons_theme.tres" id="9"]
+[ext_resource type="Script" path="res://scripts/Buttons/ReloadSceneButton.gd" id="10"]
+[ext_resource type="Script" path="res://scenes/Misc/GUI.gd" id="11"]
+[ext_resource type="Texture2D" uid="uid://cwlojakwc67qi" path="res://Sprites/button3.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://jqvnb4che7q7" path="res://Sprites/borderbottomt.png" id="13"]
+[ext_resource type="PackedScene" uid="uid://bdv0l4mm4jeu5" path="res://scenes/level_timer.tscn" id="13_utanc"]
+[ext_resource type="Texture2D" uid="uid://28dukqphp7im" path="res://Sprites/bordertop2.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://cjeol22vf3rlr" path="res://Sprites/borderleft.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://r4mdasor1rju" path="res://Sprites/borderright.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://by0nnu7nvax4j" path="res://Sprites/button2.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://ccvh1li7ve6d6" path="res://Sprites/button1.png" id="18"]
+[ext_resource type="AudioStream" uid="uid://cars8vemow13r" path="res://music/Web surf loop 2.ogg" id="19"]
+[ext_resource type="AudioStream" uid="uid://dmymgo758yvf3" path="res://sounds/Square 10.ogg" id="20"]
+[ext_resource type="PackedScene" uid="uid://cu6b833ex4l2l" path="res://scenes/Misc/HPBaseCounter.tscn" id="21"]
+[ext_resource type="Script" path="res://scenes/Misc/BaseHPTextureProgress.gd" id="22"]
+[ext_resource type="Script" path="res://scenes/Button/FullScreenButton.gd" id="23"]
+[ext_resource type="Script" path="res://scripts/Buttons/ExitToMenuButton.gd" id="23_n4ghx"]
+[ext_resource type="Script" path="res://scripts/Buttons/HideWindowButton.gd" id="24"]
+[ext_resource type="PackedScene" path="res://scenes/Misc/ScoreCounter.tscn" id="25"]
+[ext_resource type="Script" path="res://scripts/Buttons/Next_Level_Button.gd" id="27_lopra"]
 
 [node name="GUI" type="Control"]
-pause_mode = 2
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 11 )
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11")
 
 [node name="Window" type="Control" parent="."]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="TextureLeft" type="TextureRect" parent="Window"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 0
 anchor_top = 0.12
 anchor_right = 0.023
 anchor_bottom = 0.96
-margin_right = 0.447998
-rect_min_size = Vector2( 0, 70 )
+offset_right = 0.447998
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 15 )
-expand = true
+texture = ExtResource("15")
+expand_mode = 1
 
 [node name="TextureBot" type="TextureRect" parent="Window"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 0
 anchor_top = 0.96
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_min_size = Vector2( 0, 20 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 13 )
-expand = true
+texture = ExtResource("13")
+expand_mode = 1
 
 [node name="TextureRight" type="TextureRect" parent="Window"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 0
 anchor_left = 0.977
 anchor_top = 0.12
 anchor_right = 1.0
 anchor_bottom = 0.96
-margin_left = -0.448059
-rect_min_size = Vector2( 0, 70 )
+offset_left = -0.448059
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 16 )
-expand = true
+texture = ExtResource("16")
+expand_mode = 1
 
 [node name="TextureTop" type="TextureRect" parent="Window"]
+custom_minimum_size = Vector2(0, 84)
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 0.12
-rect_min_size = Vector2( 0, 70 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 14 )
-expand = true
+texture = ExtResource("14")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchor_left = 0.002
+anchor_top = 0.003
+anchor_right = 0.884
+anchor_bottom = 0.112
+offset_left = -0.0480001
+offset_top = 0.2
+offset_right = -1.21606
+offset_bottom = 3.8
+
+[node name="TopHContainer" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="HPCounter" parent="VBoxContainer/TopHContainer" instance=ExtResource("21")]
+custom_minimum_size = Vector2(130, 20)
+layout_mode = 2
+
+[node name="BaseHPTextureProgress" type="TextureProgressBar" parent="VBoxContainer/TopHContainer"]
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("7_48j7j")
+texture_progress = ExtResource("8_xsman")
+script = ExtResource("22")
+
+[node name="empty space" type="Control" parent="VBoxContainer/TopHContainer"]
+visible = false
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScoreCounter" parent="VBoxContainer/TopHContainer" instance=ExtResource("25")]
+custom_minimum_size = Vector2(150, 35)
+layout_mode = 2
+
+[node name="HUD" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="empty space" type="Control" parent="VBoxContainer/HUD"]
+visible = false
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HPCounter" parent="VBoxContainer/HUD" instance=ExtResource("5")]
+custom_minimum_size = Vector2(85, 30)
+layout_mode = 2
+
+[node name="empty space2" type="Control" parent="VBoxContainer/HUD"]
+layout_mode = 2
+
+[node name="PlayerHPTextureProgress" type="TextureProgressBar" parent="VBoxContainer/HUD"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.86
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("7_48j7j")
+texture_progress = ExtResource("8_xsman")
+script = ExtResource("2")
+
+[node name="empty space3" type="Control" parent="VBoxContainer/HUD"]
+layout_mode = 2
+
+[node name="Level_Timer" parent="VBoxContainer/HUD" instance=ExtResource("13_utanc")]
+layout_mode = 2
 
 [node name="WindowButtons" type="HBoxContainer" parent="."]
+layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -110.0
-margin_bottom = 33.0
+offset_left = -110.0
+offset_bottom = 33.0
 
-[node name="WindowButton2" type="TextureButton" parent="WindowButtons"]
-margin_right = 34.0
-margin_bottom = 33.0
-rect_min_size = Vector2( 20, 20 )
+[node name="HideWindowButton" type="TextureButton" parent="WindowButtons"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.72
-texture_normal = ExtResource( 18 )
-texture_pressed = ExtResource( 18 )
-expand = true
+texture_normal = ExtResource("18")
+texture_pressed = ExtResource("18")
 stretch_mode = 5
+script = ExtResource("24")
 
-[node name="WindowButton" type="TextureButton" parent="WindowButtons"]
-margin_left = 38.0
-margin_right = 72.0
-margin_bottom = 33.0
-rect_min_size = Vector2( 20, 20 )
+[node name="FullScreenButton" type="TextureButton" parent="WindowButtons"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.72
-texture_normal = ExtResource( 17 )
-texture_pressed = ExtResource( 17 )
-expand = true
+texture_normal = ExtResource("17")
+texture_pressed = ExtResource("17")
 stretch_mode = 5
+script = ExtResource("23")
 
 [node name="ExitButton" type="TextureButton" parent="WindowButtons"]
-margin_left = 76.0
-margin_right = 110.0
-margin_bottom = 33.0
-rect_min_size = Vector2( 20, 20 )
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.72
-texture_normal = ExtResource( 12 )
-texture_pressed = ExtResource( 12 )
-expand = true
+disabled = true
+texture_normal = ExtResource("12")
+texture_pressed = ExtResource("12")
 stretch_mode = 5
-script = ExtResource( 8 )
+script = ExtResource("8")
 
 [node name="BorderTexture" type="NinePatchRect" parent="."]
 visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 1 )
+texture = ExtResource("1")
 patch_margin_left = 12
 patch_margin_top = 31
 patch_margin_bottom = 12
 
-[node name="TopHContainer" type="HBoxContainer" parent="."]
-anchor_right = 0.892
-margin_right = -221.408
-margin_bottom = 33.0
-
-[node name="HPCounter" parent="TopHContainer" instance=ExtResource( 21 )]
-margin_right = 130.0
-margin_bottom = 33.0
-rect_min_size = Vector2( 130, 30 )
-
-[node name="BaseHPTextureProgress" type="TextureProgress" parent="TopHContainer"]
-margin_left = 134.0
-margin_right = 692.0
-margin_bottom = 33.0
-rect_min_size = Vector2( 100, 0 )
-size_flags_horizontal = 3
-texture_under = ExtResource( 3 )
-texture_progress = ExtResource( 4 )
-nine_patch_stretch = true
-script = ExtResource( 22 )
-
-[node name="HUD" type="HBoxContainer" parent="."]
-anchor_left = 0.001
-anchor_top = 0.062
-anchor_right = 0.625
-anchor_bottom = 0.115
-margin_left = -0.024
-margin_top = -0.200001
-size_flags_horizontal = 3
-
-[node name="empty space" type="Control" parent="HUD"]
-visible = false
-margin_right = 109.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 10, 0 )
-size_flags_horizontal = 3
-
-[node name="HPCounter" parent="HUD" instance=ExtResource( 5 )]
-margin_right = 85.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 85, 30 )
-
-[node name="empty space2" type="Control" parent="HUD"]
-margin_left = 89.0
-margin_right = 89.0
-margin_bottom = 32.0
-
-[node name="PlayerHPTextureProgress" type="TextureProgress" parent="HUD"]
-margin_left = 93.0
-margin_right = 639.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 20, 0 )
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 7.43
-texture_under = ExtResource( 3 )
-texture_progress = ExtResource( 4 )
-nine_patch_stretch = true
-script = ExtResource( 2 )
-
 [node name="GameOver" type="ColorRect" parent="."]
-pause_mode = 2
+process_mode = 2
 visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.556863 )
+color = Color(0, 0, 0, 0.556863)
 
 [node name="GameOverTimer" type="Timer" parent="GameOver"]
+process_mode = 3
 one_shot = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="GameOver"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.5
+offset_top = -39.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
 alignment = 1
 
 [node name="GameOver" type="Label" parent="GameOver/VBoxContainer"]
-margin_top = 237.0
-margin_right = 1024.0
-margin_bottom = 309.0
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-theme = ExtResource( 6 )
+theme = ExtResource("6")
 text = "Game over"
-align = 1
-valign = 1
+horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GameOver/VBoxContainer"]
-margin_top = 313.0
-margin_right = 1024.0
-margin_bottom = 363.0
+layout_mode = 2
 
 [node name="Control" type="Control" parent="GameOver/VBoxContainer/HBoxContainer"]
-margin_right = 253.0
-margin_bottom = 50.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="ExitButton" type="TextureButton" parent="GameOver/VBoxContainer/HBoxContainer"]
-margin_left = 257.0
-margin_right = 510.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 200, 50 )
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 7 )
-expand = true
-script = ExtResource( 8 )
-reference_path = "res://scenes/Menus/MainMenu.tscn"
+texture_normal = ExtResource("7")
+texture_pressed = ExtResource("7")
+stretch_mode = 0
+script = ExtResource("23_n4ghx")
 
 [node name="Label" type="Label" parent="GameOver/VBoxContainer/HBoxContainer/ExitButton"]
-margin_right = 251.0
-margin_bottom = 49.0
+layout_mode = 0
+offset_right = 251.0
+offset_bottom = 49.0
 size_flags_vertical = 0
-theme = ExtResource( 9 )
+theme = ExtResource("9")
 text = "Exit"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 clip_text = true
 
+[node name="HSplitContainer" type="HSplitContainer" parent="GameOver/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
 [node name="RestartButton" type="TextureButton" parent="GameOver/VBoxContainer/HBoxContainer"]
-margin_left = 514.0
-margin_right = 767.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 200, 50 )
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 7 )
-expand = true
-script = ExtResource( 10 )
+texture_normal = ExtResource("7")
+texture_pressed = ExtResource("7")
+stretch_mode = 0
+script = ExtResource("10")
 
 [node name="Label" type="Label" parent="GameOver/VBoxContainer/HBoxContainer/RestartButton"]
-margin_right = 251.0
-margin_bottom = 50.0
-theme = ExtResource( 9 )
+layout_mode = 0
+offset_right = 251.0
+offset_bottom = 50.0
+theme = ExtResource("9")
 text = "Restart Level"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 clip_text = true
 
 [node name="Control2" type="Control" parent="GameOver/VBoxContainer/HBoxContainer"]
-margin_left = 771.0
-margin_right = 1024.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 200, 0 )
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="GameOver"]
-stream = ExtResource( 20 )
+stream = ExtResource("20")
 volume_db = -4.026
+bus = &"SFX"
 
 [node name="DeathMusic" type="AudioStreamPlayer" parent="GameOver"]
-stream = ExtResource( 19 )
+stream = ExtResource("19")
+volume_db = -4.026
+bus = &"Music"
+
+[node name="LevelCompleted" type="ColorRect" parent="."]
+process_mode = 2
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.556863)
+
+[node name="LevelCompletedTimer" type="Timer" parent="LevelCompleted"]
+process_mode = 3
+one_shot = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelCompleted"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.333
+anchor_top = 0.123
+anchor_right = 0.667
+anchor_bottom = 0.951
+offset_left = 0.384003
+offset_top = 0.295998
+offset_right = -0.384033
+offset_bottom = -0.248047
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="LevelCompleted" type="Label" parent="LevelCompleted/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("6")
+text = "Level Completed"
+horizontal_alignment = 1
+
+[node name="Next_Level_Button" type="TextureButton" parent="LevelCompleted/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture_normal = ExtResource("7")
+texture_pressed = ExtResource("7")
+stretch_mode = 0
+script = ExtResource("27_lopra")
+
+[node name="Label" type="Label" parent="LevelCompleted/VBoxContainer/Next_Level_Button"]
+layout_mode = 0
+offset_right = 384.0
+offset_bottom = 48.0
+theme = ExtResource("9")
+text = "Next Level"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="VSplitContainer3" type="VSplitContainer" parent="LevelCompleted/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="ShopButton" type="TextureButton" parent="LevelCompleted/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture_normal = ExtResource("7")
+texture_pressed = ExtResource("7")
+stretch_mode = 0
+script = ExtResource("8")
+reference_path = "res://scenes/Menus/shop.tscn"
+
+[node name="Label" type="Label" parent="LevelCompleted/VBoxContainer/ShopButton"]
+layout_mode = 0
+offset_right = 384.0
+offset_bottom = 48.0
+theme = ExtResource("9")
+text = "Shop"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="VSplitContainer2" type="VSplitContainer" parent="LevelCompleted/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="RestartButton" type="TextureButton" parent="LevelCompleted/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture_normal = ExtResource("7")
+texture_pressed = ExtResource("7")
+stretch_mode = 0
+script = ExtResource("10")
+
+[node name="Label" type="Label" parent="LevelCompleted/VBoxContainer/RestartButton"]
+layout_mode = 0
+offset_right = 384.0
+offset_bottom = 48.0
+theme = ExtResource("9")
+text = "Restart Level"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="VSplitContainer" type="VSplitContainer" parent="LevelCompleted/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="BacktoMenuButton" type="TextureButton" parent="LevelCompleted/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture_normal = ExtResource("7")
+texture_pressed = ExtResource("7")
+stretch_mode = 0
+script = ExtResource("23_n4ghx")
+
+[node name="Label" type="Label" parent="LevelCompleted/VBoxContainer/BacktoMenuButton"]
+layout_mode = 0
+offset_right = 384.0
+offset_bottom = 48.0
+size_flags_vertical = 0
+theme = ExtResource("9")
+text = "Back To Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LevelCompleted/VBoxContainer"]
+layout_mode = 2
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="LevelCompleted"]
+stream = ExtResource("20")
 volume_db = -4.026
 
-[connection signal="timeout" from="GameOver/GameOverTimer" to="." method="_on_GameOverTimer_timeout"]
+[node name="DeathMusic" type="AudioStreamPlayer" parent="LevelCompleted"]
+stream = ExtResource("19")
+volume_db = -4.026
